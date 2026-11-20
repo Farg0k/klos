@@ -1,15 +1,23 @@
 # klos
 
-A local OPDS bridge for Kindle.
+A local book server for Kindle: OPDS catalog and a folder on the phone.
 
-The app turns an Android phone into a small HTTP server: it reads a remote
-OPDS catalog and serves it to the Kindle **Experimental Browser** as simple
-HTML pages. Books are usually not stored on the phone — they are proxied from
-the original OPDS server straight to the Kindle; if you want, klos can save a
-book into a folder on the phone that the Kindle can see.
+The app turns an Android phone into a small HTTP server that serves books to
+the Kindle **Experimental Browser** as simple HTML pages. Books can come from
+two independent sources:
+
+- an **OPDS catalog** — klos reads a remote catalog and proxies the books from
+  the original OPDS server straight to the Kindle; they are usually not stored
+  on the phone;
+- a **local folder** — klos serves books from a folder on the phone, with
+  subfolders, so the Kindle can read them even without an OPDS catalog.
+
+Both can be connected at the same time. If you want, klos can also save a
+catalog book into the local folder that the Kindle can see.
 
 ```
 Kindle (Experimental Browser)  ──HTTP──▶  phone (klos)  ──HTTP──▶  OPDS server
+                                                    └──▶  local folder on the phone
 ```
 
 ## Features
