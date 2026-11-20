@@ -64,10 +64,20 @@ jobs:
       - name: Read the changelog entry
         run: |
           version="${GITHUB_REF_NAME#v}"
+          # Prints the body of "## $version", without the heading and without
+          # the blank lines around it. CRLF is stripped so a checkout on Windows
+          # produces the same notes as on the runner.
           awk -v version="$version" '
-            $0 ~ "^## " version "$" { found = 1; next }
+            { sub(/\r$/, "") }
+            $0 == "## " version { found = 1; next }
             /^## / { if (found) exit }
-            found { print }
+            found { count++; lines[count] = $0 }
+            END {
+              while (count > 0 && lines[count] ~ /^[[:space:]]*$/) count--
+              first = 1
+              while (first <= count && lines[first] ~ /^[[:space:]]*$/) first++
+              for (i = first; i <= count; i++) print lines[i]
+            }
           ' CHANGELOG.md > release-notes.md
           if [ ! -s release-notes.md ]; then
             echo "::error::CHANGELOG.md has no section for $version."
