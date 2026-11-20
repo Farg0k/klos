@@ -584,8 +584,43 @@ artifact. To publish a GitHub release with the APK files:
    split and universal APKs and attaches them to the GitHub release for the
    tag.
 
-The release build is signed with the debug key, so it installs normally but
-cannot replace an APK signed with a different key. A debug key generated on a
-CI runner changes between runs; for a stable update path, keep one release
-keystore, store it and its passwords in GitHub Secrets and configure your own
-`signingConfig` in `android/app/build.gradle.kts`.
+### Signing key
+
+A debug key generated on a CI runner changes between runs, so APKs signed with
+it cannot update each other. The **Release APK** workflow signs with a
+permanent key from GitHub Secrets and fails when the key is missing.
+
+Create the keystore once and back it up — losing it means you cannot update the
+app later:
+
+```powershell
+keytool -genkeypair -v -storetype PKCS12 -keystore android/klos-release.jks `
+  -alias klos -keyalg RSA -keysize 2048 -validity 10000
+```
+
+Encode it for GitHub:
+
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("android/klos-release.jks")) | Set-Clipboard
+```
+
+Add four repository secrets (**Settings → Secrets and variables → Actions**):
+
+| Secret | Value |
+| --- | --- |
+| `KEYSTORE_BASE64` | the base64 string copied above |
+| `KEYSTORE_PASSWORD` | the keystore password |
+| `KEY_ALIAS` | `klos` |
+| `KEY_PASSWORD` | the key password |
+
+The keystore and `key.properties` are gitignored, so they never enter the
+repository. For local release builds create `android/key.properties`:
+
+```
+storeFile=klos-release.jks
+storePassword=...
+keyAlias=klos
+keyPassword=...
+```
+
+Without that file the release build falls back to the debug key.

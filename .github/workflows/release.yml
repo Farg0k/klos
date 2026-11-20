@@ -13,6 +13,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The release workflow needs a permanent key: a debug key generated on
+      # a runner changes between runs, so APKs could not update each other.
+      - name: Prepare signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::error::Add the KEYSTORE_BASE64, KEYSTORE_PASSWORD, KEY_ALIAS and KEY_PASSWORD secrets."
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 --decode > android/klos-release.jks
+          printf 'storeFile=klos-release.jks\nstorePassword=%s\nkeyAlias=%s\nkeyPassword=%s\n' \
+            "$KEYSTORE_PASSWORD" "$KEY_ALIAS" "$KEY_PASSWORD" > android/key.properties
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
