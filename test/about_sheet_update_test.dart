@@ -90,6 +90,36 @@ void main() {
     expect(find.text('Download and install'), findsOneWidget);
   });
 
+  testWidgets('shows the release notes as a list, not as Markdown', (
+    tester,
+  ) async {
+    await _pumpSheet(
+      tester,
+      () async => {
+        'tag_name': 'v4.0.0',
+        'body':
+            '## 4.0.0\n\n- Checks for updates at launch\n- **Faster** startup\n\n'
+            '**Full Changelog**: https://github.com/Farg0k/klos/compare/x...y',
+        'assets': [
+          {
+            'name': 'app-arm64-v8a-release.apk',
+            'browser_download_url': 'https://x/app.apk',
+          },
+        ],
+      },
+    );
+
+    await tester.tap(find.text('Check for updates'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Checks for updates at launch'), findsOneWidget);
+    expect(find.text('Faster startup'), findsOneWidget);
+    expect(find.text('4.0.0'), findsOneWidget);
+    // The raw Markdown never reaches the screen.
+    expect(find.textContaining('**'), findsNothing);
+    expect(find.textContaining('Full Changelog'), findsNothing);
+  });
+
   testWidgets('explains a failed GitHub request', (tester) async {
     await _pumpSheet(
       tester,

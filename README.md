@@ -576,8 +576,12 @@ artifact. To publish a GitHub release with the APK files:
 
 1. Bump `version` in `pubspec.yaml`, for example to `1.0.0+2`. The number
    after `+` is the Android `versionCode` and must grow with every release.
-2. Commit the change.
-3. Push a tag:
+2. Add the section for the new version to `CHANGELOG.md` — the release
+   workflow copies it into the GitHub release, and the app shows that text
+   under **What's new**. A tag without a matching section fails the build, so
+   the notes can never go missing.
+3. Commit the change.
+4. Push a tag:
 
    ```powershell
    git tag v1.0.0

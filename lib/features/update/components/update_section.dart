@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../generated/l10n.dart';
 import '../../../platform/app_update.dart';
 import '../bloc/update_bloc.dart';
+import 'release_notes_view.dart';
 import 'update_message.dart';
 
 /// The «check for updates / download and install» block of the «About» sheet.
@@ -88,7 +89,7 @@ class UpdateSection extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 4),
-              Text(update.notes, style: textTheme.bodySmall),
+              ReleaseNotesView(markdown: update.notes),
             ],
             const SizedBox(height: 12),
             FilledButton.icon(
