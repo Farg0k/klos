@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:klos/features/about/about_sheet.dart';
+import 'package:klos/features/update/bloc/update_bloc.dart';
 import 'package:klos/generated/l10n.dart';
 import 'package:klos/platform/app_info.dart';
 import 'package:klos/platform/app_update.dart';
@@ -17,34 +19,44 @@ Map<String, dynamic> _release(String tag) => {
   ],
 };
 
-Future<void> _pumpSheet(WidgetTester tester, AppUpdateService updates) async {
+/// Builds the sheet with a bloc that answers from [release] instead of GitHub.
+///
+/// [startAutomatically] runs the launch check before the sheet is pumped, the
+/// way the app does it, so the sheet opens on an already known release.
+Future<void> _pumpSheet(
+  WidgetTester tester,
+  Future<Map<String, dynamic>?> Function() release, {
+  String installed = '1.0.0',
+  bool startAutomatically = false,
+}) async {
+  final bloc = UpdateBloc(
+    service: AppUpdateService(
+      fetchRelease: release,
+      abisProvider: () async => const ['arm64-v8a'],
+    ),
+    infoLoader: () async => AppInfo(version: installed),
+  );
+  addTearDown(bloc.close);
+  if (startAutomatically) bloc.add(const UpdateStarted());
+
   await tester.pumpWidget(
-    MaterialApp(
-      localizationsDelegates: const [S.delegate],
-      supportedLocales: S.delegate.supportedLocales,
-      home: Scaffold(body: AboutSheet(updateService: updates)),
+    BlocProvider.value(
+      value: bloc,
+      child: MaterialApp(
+        localizationsDelegates: const [S.delegate],
+        supportedLocales: S.delegate.supportedLocales,
+        home: const Scaffold(body: AboutSheet()),
+      ),
     ),
   );
   await tester.pumpAndSettle();
 }
 
 void main() {
-  setUp(() {
-    AppInfo.useLoader(
-      () async => const AppInfo(version: '1.0.0', buildNumber: '1'),
-    );
-  });
-
   tearDown(AppInfo.reset);
 
   testWidgets('reports that the installed version is current', (tester) async {
-    await _pumpSheet(
-      tester,
-      AppUpdateService(
-        fetchRelease: () async => _release('v1.0.0'),
-        abisProvider: () async => const ['arm64-v8a'],
-      ),
-    );
+    await _pumpSheet(tester, () async => _release('v1.0.0'));
 
     await tester.tap(find.text('Check for updates'));
     await tester.pumpAndSettle();
@@ -53,13 +65,7 @@ void main() {
   });
 
   testWidgets('offers the newer release with its notes', (tester) async {
-    await _pumpSheet(
-      tester,
-      AppUpdateService(
-        fetchRelease: () async => _release('v1.2.0'),
-        abisProvider: () async => const ['arm64-v8a'],
-      ),
-    );
+    await _pumpSheet(tester, () async => _release('v1.2.0'));
 
     await tester.tap(find.text('Check for updates'));
     await tester.pumpAndSettle();
@@ -70,14 +76,24 @@ void main() {
     expect(find.text('Check for updates'), findsNothing);
   });
 
+  testWidgets('shows the release the launch check already found', (
+    tester,
+  ) async {
+    await _pumpSheet(
+      tester,
+      () async => _release('v3.0.0'),
+      installed: '1.0.0',
+      startAutomatically: true,
+    );
+
+    expect(find.text('Version 3.0.0 is available'), findsOneWidget);
+    expect(find.text('Download and install'), findsOneWidget);
+  });
+
   testWidgets('explains a failed GitHub request', (tester) async {
     await _pumpSheet(
       tester,
-      AppUpdateService(
-        fetchRelease: () async =>
-            throw UpdateException(UpdateProblem.github, '404'),
-        abisProvider: () async => const ['arm64-v8a'],
-      ),
+      () async => throw UpdateException(UpdateProblem.github, '404'),
     );
 
     await tester.tap(find.text('Check for updates'));
@@ -89,15 +105,12 @@ void main() {
   testWidgets('explains a release without a suitable APK', (tester) async {
     await _pumpSheet(
       tester,
-      AppUpdateService(
-        fetchRelease: () async => {
-          'tag_name': 'v2.0.0',
-          'assets': [
-            {'name': 'source.zip', 'browser_download_url': 'https://x/y.zip'},
-          ],
-        },
-        abisProvider: () async => const ['arm64-v8a'],
-      ),
+      () async => {
+        'tag_name': 'v2.0.0',
+        'assets': [
+          {'name': 'source.zip', 'browser_download_url': 'https://x/y.zip'},
+        ],
+      },
     );
 
     await tester.tap(find.text('Check for updates'));

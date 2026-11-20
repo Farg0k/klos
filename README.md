@@ -28,8 +28,8 @@ Kindle (Experimental Browser)  ──HTTP──▶  phone (klos)  ──HTTP─�
   **Settings → Language** (Auto / English / Ukrainian);
 - auto / light / dark theme — **Settings → Theme**; Auto follows the phone's
   light or dark mode;
-- updates from GitHub Releases inside **Settings → About the app**, including
-  the release notes and a download that installs over the current version;
+- updates from GitHub Releases checked at launch, with a card on the home screen
+  and an install that keeps the current settings;
 - plain HTML without JavaScript — works in old Kindle browsers and stays
   readable on e-ink;
 - nested catalogs and OPDS pagination (`next`/`previous`); when the server
@@ -381,6 +381,7 @@ acquisition.
 | `lib/platform/screen_wakelock.dart` | optional wake lock that keeps the screen on |
 | `lib/platform/app_info.dart` | app version and build number (`package_info_plus`) |
 | `lib/platform/app_update.dart` | GitHub release check, ABI-aware APK choice, install |
+| `lib/features/update/` | launch check, home-screen banner, install flow |
 | `lib/local/local_files.dart` | local folder model, formats and book filter |
 | `lib/local/local_storage.dart` | SAF folder access, reading and writing, `content://` link checks |
 | `lib/local/folder_download.dart` | downloading a catalog book into the local folder |
@@ -591,10 +592,17 @@ artifact. To publish a GitHub release with the APK files:
 
 ### Updates inside the app
 
-**Settings → About the app → Check for updates** reads the latest release from
-the GitHub API (`Farg0k/klos`), compares its tag with the installed version and,
-when a newer one exists, shows the release notes and a **Download and install**
-button.
+klos checks GitHub Releases by itself when it starts: it reads
+`api.github.com/repos/Farg0k/klos/releases/latest`, compares the tag with the
+installed version and, when a newer one exists, shows a card on the home
+screen. Tapping it opens **Settings → About the app**, where the release notes
+and the **Download and install** button are. The **Check for updates** button in
+the same sheet asks again, and can be used when the automatic check failed.
+
+A check that finds nothing, or that cannot reach GitHub, keeps the home screen
+clean — the local server does not need the network and it must not be blocked
+by a failed request. The card can be closed, which hides it until the next
+launch or a newer release.
 
 The button downloads the APK that matches the phone's ABI — `app-arm64-v8a`,
 `app-armeabi-v7a` or `app-x86_64`, with `app-release.apk` for anything else —

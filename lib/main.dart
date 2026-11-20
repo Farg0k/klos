@@ -9,8 +9,11 @@ import 'features/favorites_screen/bloc/favorites_bloc.dart';
 import 'features/home_screen/bloc/home_bloc.dart';
 import 'features/home_screen/home_screen.dart';
 import 'features/settings_screen/bloc/settings_bloc.dart';
+import 'features/update/bloc/update_bloc.dart';
 import 'generated/l10n.dart';
 import 'l10n/l10n.dart';
+import 'platform/app_info.dart';
+import 'platform/app_update.dart';
 import 'platform/foreground_service.dart';
 import 'platform/screen_wakelock.dart';
 import 'theme/app_theme.dart';
@@ -23,7 +26,14 @@ Future<void> main() async {
 }
 
 class KlosApp extends StatelessWidget {
-  const KlosApp({super.key});
+  const KlosApp({super.key, this.updateService, this.updateInfoLoader});
+
+  /// Replaces the GitHub check; tests use it to stay offline and to avoid the
+  /// platform ABI channel, which has no implementation outside Android.
+  final AppUpdateService? updateService;
+
+  /// Replaces the installed-version lookup in the update check.
+  final AppInfoLoader? updateInfoLoader;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +44,11 @@ class KlosApp extends StatelessWidget {
         ),
         BlocProvider(create: (_) => HomeBloc()..add(const HomeStarted())),
         BlocProvider(create: (_) => FavoritesBloc()),
+        BlocProvider(
+          create: (_) =>
+              UpdateBloc(service: updateService, infoLoader: updateInfoLoader)
+                ..add(const UpdateStarted()),
+        ),
       ],
       child: const _AppView(),
     );

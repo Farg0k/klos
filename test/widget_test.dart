@@ -5,20 +5,34 @@ import 'package:klos/entity/app_settings.dart';
 import 'package:klos/features/about/licenses_page.dart';
 import 'package:klos/features/favorites_screen/favorites_screen.dart';
 import 'package:klos/features/home_screen/components/addresses_card.dart';
+import 'package:klos/features/update/components/update_banner.dart';
 import 'package:klos/main.dart';
 import 'package:klos/platform/app_info.dart';
+import 'package:klos/platform/app_update.dart';
 import 'package:klos/platform/screen_wakelock.dart';
 import 'package:klos/theme/app_theme.dart';
 
 import 'helpers/test_locator.dart';
 
+/// The app as tests build it: the update check is answered offline.
+///
+/// The GitHub request and the ABI channel need a real Android runtime, so the
+/// fake reports «no release» and every test starts without a banner.
 Future<FakeObjectBoxService> _pumpApp(
   WidgetTester tester, {
   AppSettings? settings,
+  Future<Map<String, dynamic>?> Function()? release,
 }) async {
   final storage = await setUpTestLocator(settings: settings);
   addTearDown(tearDownTestLocator);
-  await tester.pumpWidget(const KlosApp());
+  await tester.pumpWidget(
+    KlosApp(
+      updateService: AppUpdateService(
+        fetchRelease: release ?? () async => null,
+        abisProvider: () async => const ['arm64-v8a'],
+      ),
+    ),
+  );
   await tester.pumpAndSettle();
   return storage;
 }
@@ -417,5 +431,62 @@ void main() {
     await tester.tap(sample);
     await tester.pumpAndSettle();
     expect(find.text('Sample licence.'), findsOneWidget);
+  });
+
+  testWidgets('announces a newer release on the home screen', (tester) async {
+    Map<String, dynamic> release() => {
+      'tag_name': 'v9.9.9',
+      'body': 'A fresh release',
+      'assets': [
+        {
+          'name': 'app-arm64-v8a-release.apk',
+          'browser_download_url':
+              'https://github.com/Farg0k/klos/releases/download/'
+              'v9.9.9/app-arm64-v8a-release.apk',
+        },
+      ],
+    };
+
+    await _pumpApp(tester, release: () async => release());
+
+    expect(find.text('Version 9.9.9 is available'), findsOneWidget);
+
+    // The banner closes for this launch, so the home screen stays tidy.
+    await tester.tap(
+      find.descendant(
+        of: find.byType(UpdateBanner),
+        matching: find.byIcon(Icons.close),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Version 9.9.9 is available'), findsNothing);
+  });
+
+  testWidgets('opens the about sheet from the update banner', (tester) async {
+    await _pumpApp(
+      tester,
+      release: () async => {
+        'tag_name': 'v9.9.9',
+        'assets': [
+          {
+            'name': 'app-arm64-v8a-release.apk',
+            'browser_download_url': 'https://x/app.apk',
+          },
+        ],
+      },
+    );
+
+    await tester.tap(find.text('Version 9.9.9 is available'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(BottomSheet), findsOneWidget);
+    expect(find.text('Download and install'), findsOneWidget);
+  });
+
+  testWidgets('keeps the home screen clean without a release', (tester) async {
+    await _pumpApp(tester);
+
+    expect(find.text('Version 9.9.9 is available'), findsNothing);
+    expect(find.byIcon(Icons.system_update), findsNothing);
   });
 }

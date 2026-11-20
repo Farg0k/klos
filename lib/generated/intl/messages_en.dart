@@ -744,6 +744,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "unknownError": MessageLookupByLibrary.simpleMessage("Unknown error."),
         "untitled": MessageLookupByLibrary.simpleMessage("Untitled"),
         "updateAvailable": m76,
+        "updateBannerHint": MessageLookupByLibrary.simpleMessage(
+            "Tap to see what\'s new and install it."),
         "updateCheck":
             MessageLookupByLibrary.simpleMessage("Check for updates"),
         "updateChecking":

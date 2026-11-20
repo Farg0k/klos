@@ -3955,6 +3955,16 @@ class S {
     );
   }
 
+  /// `Tap to see what's new and install it.`
+  String get updateBannerHint {
+    return Intl.message(
+      'Tap to see what\'s new and install it.',
+      name: 'updateBannerHint',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Could not install the update: {error}`
   String updateInstallFailed(String error) {
     return Intl.message(

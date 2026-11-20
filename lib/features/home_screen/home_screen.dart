@@ -3,8 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../generated/l10n.dart';
+import '../about/about_sheet.dart';
 import '../server_settings/components/settings_sheet.dart';
 import '../settings_screen/settings_screen.dart';
+import '../update/components/update_banner.dart';
 import 'bloc/home_bloc.dart';
 import 'components/addresses_card.dart';
 import 'components/library_card.dart';
@@ -52,6 +54,7 @@ class HomeScreen extends StatelessWidget {
                   onStop: () =>
                       context.read<HomeBloc>().add(const HomeStopRequested()),
                 ),
+                UpdateBanner(onOpenAbout: () => showAboutSheet(context)),
                 if (state.lastError != null)
                   ErrorCard(message: state.lastError!),
                 AddressesCard(state: state),

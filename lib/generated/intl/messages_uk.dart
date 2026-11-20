@@ -752,6 +752,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Невідома помилка."),
         "untitled": MessageLookupByLibrary.simpleMessage("Без назви"),
         "updateAvailable": m76,
+        "updateBannerHint": MessageLookupByLibrary.simpleMessage(
+            "Торкніться, щоб побачити, що нового, і встановити."),
         "updateCheck":
             MessageLookupByLibrary.simpleMessage("Перевірити оновлення"),
         "updateChecking":

@@ -1039,7 +1039,7 @@
   },
   "updateInstallHint": "The new version installs over this one, so settings, favorites and the chosen folder stay in place.",
   "updateNotes": "What's new",
-  "updateInstallFailed": "Could not install the update: {error}",
+  "updateBannerHint": "Tap to see what's new and install it.",  "updateInstallFailed": "Could not install the update: {error}",
   "@updateInstallFailed": {
     "placeholders": {
       "error": {

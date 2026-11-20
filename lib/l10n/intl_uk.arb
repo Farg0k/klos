@@ -1011,6 +1011,7 @@
   },
   "updateInstallHint": "Нова версія встановлюється поверх цієї, тож налаштування, обране й вибрана папка залишаються на місці.",
   "updateNotes": "Що нового",
+  "updateBannerHint": "Торкніться, щоб побачити, що нового, і встановити.",
   "updateInstallFailed": "Не вдалося встановити оновлення: {error}",
   "@updateInstallFailed": {
     "placeholders": {
