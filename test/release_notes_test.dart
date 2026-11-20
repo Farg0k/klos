@@ -49,6 +49,39 @@ void main() {
       expect(notes.single.text, 'Fixed crash in dark mode');
     });
 
+    test('joins a bullet that is wrapped over several lines', () {
+      final notes = parseReleaseNotes('''
+- Release notes in «About the app» are shown as a readable list instead of raw
+  Markdown, and no longer include GitHub's bare compare link.
+- Every release now carries a real changelog, taken from `CHANGELOG.md`.
+''');
+
+      expect(notes, hasLength(2));
+      expect(
+        notes[0].text,
+        'Release notes in «About the app» are shown as a readable list instead '
+        'of raw Markdown, and no longer include GitHub\'s bare compare link.',
+      );
+      expect(notes[0].bullet, isTrue);
+      expect(
+        notes[1].text,
+        'Every release now carries a real changelog, taken from CHANGELOG.md.',
+      );
+    });
+
+    test('joins a wrapped paragraph into one entry', () {
+      final notes = parseReleaseNotes('''
+A failed check never blocks the app
+and keeps the home screen clean.
+''');
+
+      expect(
+        notes.single.text,
+        'A failed check never blocks the app and keeps the home screen clean.',
+      );
+      expect(notes.single.bullet, isFalse);
+    });
+
     test('keeps plain paragraphs from hand-written notes', () {
       final notes = parseReleaseNotes(
         'The local server keeps working without the network.',

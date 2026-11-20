@@ -5,6 +5,11 @@ Notable changes in each klos release. The newest version is on top.
 The app shows the section of the release it downloads, so the entries here are
 what the user reads under **What's new** in «About the app».
 
+## 1.0.4
+
+- Release notes are joined back together when a changelog entry is wrapped over
+  several lines, so one change is shown as one item instead of two.
+
 ## 1.0.3
 
 - Release notes in «About the app» are shown as a readable list instead of raw

@@ -6,7 +6,7 @@
 class ReleaseNote {
   const ReleaseNote(this.text, {this.bullet = false, this.heading = false});
 
-  /// Text without Markdown markers.
+  /// Text without Markdown markers, with wrapped lines joined.
   final String text;
 
   /// Whether the line was a list item in the source.
@@ -21,9 +21,14 @@ class ReleaseNote {
 
 /// Turns the Markdown of a GitHub release into plain lines.
 ///
-/// Links keep their label and lose the address, because the sheet cannot open
-/// a link from a bottom sheet without leaving the app. Empty lines disappear:
-/// the sheet adds its own spacing.
+/// Links keep their label and lose the address, because a bottom sheet cannot
+/// open one without leaving the app. Empty lines disappear: the sheet adds its
+/// own spacing.
+///
+/// Changelog entries are wrapped at 80 columns, so a bullet usually spans
+/// several source lines. A line that does not start a block of its own is a
+/// continuation of the previous one and is joined to it, otherwise a single
+/// change would be shown as two.
 List<ReleaseNote> parseReleaseNotes(String markdown) {
   final notes = <ReleaseNote>[];
   for (final raw in markdown.split('\n')) {
@@ -32,10 +37,7 @@ List<ReleaseNote> parseReleaseNotes(String markdown) {
 
     // GitHub adds this footer to generated notes; it is a link to a compare
     // page, not a change.
-    if (line.contains('Full Changelog') ||
-        line.contains('**Full Changelog**')) {
-      continue;
-    }
+    if (line.contains('Full Changelog')) continue;
 
     if (line.startsWith('#')) {
       final heading = _clean(line.replaceAll(RegExp(r'^#+\s*'), ''));
@@ -52,7 +54,20 @@ List<ReleaseNote> parseReleaseNotes(String markdown) {
     }
 
     final text = _clean(line);
-    if (text.isNotEmpty) notes.add(ReleaseNote(text));
+    if (text.isEmpty) continue;
+
+    // A plain line after a bullet continues it; join instead of adding a new
+    // entry. A wrapped paragraph joins the paragraph above it the same way.
+    final previous = notes.isEmpty ? null : notes.last;
+    if (previous != null && !previous.heading) {
+      notes[notes.length - 1] = ReleaseNote(
+        '${previous.text} $text'.trim(),
+        bullet: previous.bullet,
+      );
+      continue;
+    }
+
+    notes.add(ReleaseNote(text));
   }
   return notes;
 }
