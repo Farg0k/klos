@@ -41,7 +41,7 @@
             android:foregroundServiceType="dataSync"/>
 
         <provider
-            android:name="androidx.core.content.FileProvider"
+            android:name=".MailFileProvider"
             android:authorities="${applicationId}.klos.mail_provider"
             android:exported="false"
             android:grantUriPermissions="true">

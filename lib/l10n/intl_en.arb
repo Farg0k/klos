@@ -1008,5 +1008,61 @@
         "type": "String"
       }
     }
+  },
+  "updateCheck": "Check for updates",
+  "updateChecking": "Checking for updates…",
+  "updateAvailable": "Version {version} is available",
+  "@updateAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "updateNone": "You have the latest version.",
+  "updateFailed": "Could not check for updates: {error}",
+  "@updateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "updateDownload": "Download and install",
+  "updateDownloading": "Downloading… {percent}%",
+  "@updateDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "updateInstallHint": "The new version installs over this one, so settings, favorites and the chosen folder stay in place.",
+  "updateNotes": "What's new",
+  "updateInstallFailed": "Could not install the update: {error}",
+  "@updateInstallFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "updateErrorGithub": "GitHub answered {status}.",
+  "@updateErrorGithub": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "updateErrorNoApk": "The release has no APK for this phone.",
+  "updateErrorDownload": "The APK could not be downloaded.",
+  "updateErrorNetwork": "Could not reach GitHub: {error}",
+  "@updateErrorNetwork": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
   }
 }

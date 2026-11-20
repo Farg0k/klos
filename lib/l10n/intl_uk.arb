@@ -980,5 +980,61 @@
         "type": "String"
       }
     }
+  },
+  "updateCheck": "Перевірити оновлення",
+  "updateChecking": "Перевіряємо оновлення…",
+  "updateAvailable": "Доступна версія {version}",
+  "@updateAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "updateNone": "У вас остання версія.",
+  "updateFailed": "Не вдалося перевірити оновлення: {error}",
+  "@updateFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "updateDownload": "Завантажити й встановити",
+  "updateDownloading": "Завантажуємо… {percent}%",
+  "@updateDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "updateInstallHint": "Нова версія встановлюється поверх цієї, тож налаштування, обране й вибрана папка залишаються на місці.",
+  "updateNotes": "Що нового",
+  "updateInstallFailed": "Не вдалося встановити оновлення: {error}",
+  "@updateInstallFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "updateErrorGithub": "GitHub відповів {status}.",
+  "@updateErrorGithub": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "updateErrorNoApk": "У релізі немає APK для цього телефона.",
+  "updateErrorDownload": "Не вдалося завантажити APK.",
+  "updateErrorNetwork": "Не вдалося зв'язатися з GitHub: {error}",
+  "@updateErrorNetwork": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
   }
 }

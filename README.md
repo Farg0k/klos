@@ -28,6 +28,8 @@ Kindle (Experimental Browser)  ──HTTP──▶  phone (klos)  ──HTTP─�
   **Settings → Language** (Auto / English / Ukrainian);
 - auto / light / dark theme — **Settings → Theme**; Auto follows the phone's
   light or dark mode;
+- updates from GitHub Releases inside **Settings → About the app**, including
+  the release notes and a download that installs over the current version;
 - plain HTML without JavaScript — works in old Kindle browsers and stays
   readable on e-ink;
 - nested catalogs and OPDS pagination (`next`/`previous`); when the server
@@ -378,6 +380,7 @@ acquisition.
 | `lib/services/server_service.dart` | HTTP server, foreground service, IP addresses, log |
 | `lib/platform/screen_wakelock.dart` | optional wake lock that keeps the screen on |
 | `lib/platform/app_info.dart` | app version and build number (`package_info_plus`) |
+| `lib/platform/app_update.dart` | GitHub release check, ABI-aware APK choice, install |
 | `lib/local/local_files.dart` | local folder model, formats and book filter |
 | `lib/local/local_storage.dart` | SAF folder access, reading and writing, `content://` link checks |
 | `lib/local/folder_download.dart` | downloading a catalog book into the local folder |
@@ -417,10 +420,10 @@ local files, port, auto-stop, delivery methods, Kindle email) is edited on the
 home screen — each item opens its own `ModalBottomSheet`, so the home screen
 stays short. The **Settings screen** contains app parameters: interface
 language, theme, wake lock (**Keep the screen on**) and the **About** item —
-version and build number from the installed package (`package_info_plus`) plus
-a custom licenses panel with the list of libraries and full texts from
-`LicenseRegistry`. Both places save changes automatically, without a Save
-button.
+version and build number from the installed package (`package_info_plus`), the
+update check against GitHub Releases and a custom licenses panel with the list
+of libraries and full texts from `LicenseRegistry`. Both places save changes
+automatically, without a Save button.
 
 Android 12+ draws the splash through the system SplashScreen API
 (`res/values-v31/styles.xml`), Android 11 and older through
@@ -582,7 +585,29 @@ artifact. To publish a GitHub release with the APK files:
 
    A `v*` tag starts the **Release APK** workflow: it runs the checks, builds
    split and universal APKs and attaches them to the GitHub release for the
-   tag.
+   tag. The APKs are signed with the same key as the installed app, so a new
+   release installs over the old one and keeps the settings, the favorites and
+   the chosen folder.
+
+### Updates inside the app
+
+**Settings → About the app → Check for updates** reads the latest release from
+the GitHub API (`Farg0k/klos`), compares its tag with the installed version and,
+when a newer one exists, shows the release notes and a **Download and install**
+button.
+
+The button downloads the APK that matches the phone's ABI — `app-arm64-v8a`,
+`app-armeabi-v7a` or `app-x86_64`, with `app-release.apk` for anything else —
+and opens the Android installer through `github_release_apk_updater`. Android
+then updates the app in place.
+
+Only the APK of the same form can replace the installed one: the phone that
+came with a split APK must stay on a split APK, and the one that came from the
+universal APK must stay on the universal one. The ABI is picked automatically,
+so installing from the app keeps that rule.
+
+Android asks for permission to install unknown apps the first time; the
+setting is per app and stays on afterwards.
 
 ### Signing key
 
@@ -624,3 +649,6 @@ keyPassword=...
 ```
 
 Without that file the release build falls back to the debug key.
+
+Never change the key between releases: Android rejects an APK signed with a
+different key, and the update inside the app would fail the same way.

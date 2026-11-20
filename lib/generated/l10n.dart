@@ -18,10 +18,8 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -43,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -66,7 +62,12 @@ class S {
 
   /// `Settings`
   String get settings {
-    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Server settings`
@@ -91,7 +92,12 @@ class S {
 
   /// `Help`
   String get help {
-    return Intl.message('Help', name: 'help', desc: '', args: []);
+    return Intl.message(
+      'Help',
+      name: 'help',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `klos • a local OPDS bridge for Kindle`
@@ -136,7 +142,12 @@ class S {
 
   /// `Cancel`
   String get cancel {
-    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Stop and exit`
@@ -221,7 +232,12 @@ class S {
 
   /// `Close`
   String get close {
-    return Intl.message('Close', name: 'close', desc: '', args: []);
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Server is stopped`
@@ -266,7 +282,12 @@ class S {
 
   /// `Stop server`
   String get stopServer {
-    return Intl.message('Stop server', name: 'stopServer', desc: '', args: []);
+    return Intl.message(
+      'Stop server',
+      name: 'stopServer',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Start server`
@@ -331,7 +352,12 @@ class S {
 
   /// `OPDS catalog`
   String get catalog {
-    return Intl.message('OPDS catalog', name: 'catalog', desc: '', args: []);
+    return Intl.message(
+      'OPDS catalog',
+      name: 'catalog',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `No address added yet`
@@ -366,7 +392,12 @@ class S {
 
   /// `Kindle email`
   String get kindleMail {
-    return Intl.message('Kindle email', name: 'kindleMail', desc: '', args: []);
+    return Intl.message(
+      'Kindle email',
+      name: 'kindleMail',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send by email via SMTP`
@@ -381,12 +412,22 @@ class S {
 
   /// `Log`
   String get log {
-    return Intl.message('Log', name: 'log', desc: '', args: []);
+    return Intl.message(
+      'Log',
+      name: 'log',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Clear`
   String get clear {
-    return Intl.message('Clear', name: 'clear', desc: '', args: []);
+    return Intl.message(
+      'Clear',
+      name: 'clear',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Kindle requests and downloads will appear here.`
@@ -401,7 +442,12 @@ class S {
 
   /// `OPDS server`
   String get opdsServer {
-    return Intl.message('OPDS server', name: 'opdsServer', desc: '', args: []);
+    return Intl.message(
+      'OPDS server',
+      name: 'opdsServer',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Catalog address`
@@ -496,7 +542,12 @@ class S {
 
   /// `Port`
   String get port {
-    return Intl.message('Port', name: 'port', desc: '', args: []);
+    return Intl.message(
+      'Port',
+      name: 'port',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Kindle address: http://phone-ip:port/`
@@ -561,7 +612,12 @@ class S {
 
   /// `Never`
   String get autoStopOff {
-    return Intl.message('Never', name: 'autoStopOff', desc: '', args: []);
+    return Intl.message(
+      'Never',
+      name: 'autoStopOff',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `{minutes} min`
@@ -606,7 +662,12 @@ class S {
 
   /// `PIN`
   String get pinShort {
-    return Intl.message('PIN', name: 'pinShort', desc: '', args: []);
+    return Intl.message(
+      'PIN',
+      name: 'pinShort',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `PIN protection`
@@ -631,7 +692,12 @@ class S {
 
   /// `PIN code`
   String get pinCode {
-    return Intl.message('PIN code', name: 'pinCode', desc: '', args: []);
+    return Intl.message(
+      'PIN code',
+      name: 'pinCode',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Enter this code once in the Kindle browser. The Kindle stays signed in until the server restarts.`
@@ -646,7 +712,12 @@ class S {
 
   /// `New PIN`
   String get pinRefresh {
-    return Intl.message('New PIN', name: 'pinRefresh', desc: '', args: []);
+    return Intl.message(
+      'New PIN',
+      name: 'pinRefresh',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The code appears here after the server starts.`
@@ -711,7 +782,12 @@ class S {
 
   /// `Unlock`
   String get pinSubmit {
-    return Intl.message('Unlock', name: 'pinSubmit', desc: '', args: []);
+    return Intl.message(
+      'Unlock',
+      name: 'pinSubmit',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Catalog appearance`
@@ -726,7 +802,12 @@ class S {
 
   /// `Show covers`
   String get showCovers {
-    return Intl.message('Show covers', name: 'showCovers', desc: '', args: []);
+    return Intl.message(
+      'Show covers',
+      name: 'showCovers',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Book thumbnails in the catalog. Turn off if pages should load faster or without images.`
@@ -761,7 +842,12 @@ class S {
 
   /// `name`
   String get kindleEmailHint {
-    return Intl.message('name', name: 'kindleEmailHint', desc: '', args: []);
+    return Intl.message(
+      'name',
+      name: 'kindleEmailHint',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Find it on Amazon: Manage Your Content and Devices → Preferences → Send to Kindle Email Address.`
@@ -816,7 +902,12 @@ class S {
 
   /// `SMTP server`
   String get smtpHost {
-    return Intl.message('SMTP server', name: 'smtpHost', desc: '', args: []);
+    return Intl.message(
+      'SMTP server',
+      name: 'smtpHost',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `smtp.gmail.com`
@@ -841,7 +932,12 @@ class S {
 
   /// `SMTP port`
   String get smtpPort {
-    return Intl.message('SMTP port', name: 'smtpPort', desc: '', args: []);
+    return Intl.message(
+      'SMTP port',
+      name: 'smtpPort',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `587 — STARTTLS, 465 — SSL`
@@ -946,7 +1042,12 @@ class S {
 
   /// `Sending...`
   String get sending {
-    return Intl.message('Sending...', name: 'sending', desc: '', args: []);
+    return Intl.message(
+      'Sending...',
+      name: 'sending',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send test email`
@@ -981,22 +1082,42 @@ class S {
 
   /// `Checking...`
   String get checking {
-    return Intl.message('Checking...', name: 'checking', desc: '', args: []);
+    return Intl.message(
+      'Checking...',
+      name: 'checking',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Check`
   String get check {
-    return Intl.message('Check', name: 'check', desc: '', args: []);
+    return Intl.message(
+      'Check',
+      name: 'check',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Saving...`
   String get saving {
-    return Intl.message('Saving...', name: 'saving', desc: '', args: []);
+    return Intl.message(
+      'Saving...',
+      name: 'saving',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Save`
   String get save {
-    return Intl.message('Save', name: 'save', desc: '', args: []);
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Settings saved`
@@ -1141,7 +1262,12 @@ class S {
 
   /// `Language`
   String get language {
-    return Intl.message('Language', name: 'language', desc: '', args: []);
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `System default`
@@ -1166,7 +1292,12 @@ class S {
 
   /// `Theme`
   String get theme {
-    return Intl.message('Theme', name: 'theme', desc: '', args: []);
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `“Auto” follows the phone's light or dark mode.`
@@ -1181,22 +1312,42 @@ class S {
 
   /// `Auto`
   String get themeSystem {
-    return Intl.message('Auto', name: 'themeSystem', desc: '', args: []);
+    return Intl.message(
+      'Auto',
+      name: 'themeSystem',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Light`
   String get themeLight {
-    return Intl.message('Light', name: 'themeLight', desc: '', args: []);
+    return Intl.message(
+      'Light',
+      name: 'themeLight',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Dark`
   String get themeDark {
-    return Intl.message('Dark', name: 'themeDark', desc: '', args: []);
+    return Intl.message(
+      'Dark',
+      name: 'themeDark',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `About the app`
   String get aboutApp {
-    return Intl.message('About the app', name: 'aboutApp', desc: '', args: []);
+    return Intl.message(
+      'About the app',
+      name: 'aboutApp',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Version, build and licences.`
@@ -1211,17 +1362,32 @@ class S {
 
   /// `Version`
   String get appVersion {
-    return Intl.message('Version', name: 'appVersion', desc: '', args: []);
+    return Intl.message(
+      'Version',
+      name: 'appVersion',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Build`
   String get appBuild {
-    return Intl.message('Build', name: 'appBuild', desc: '', args: []);
+    return Intl.message(
+      'Build',
+      name: 'appBuild',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Package`
   String get appPackage {
-    return Intl.message('Package', name: 'appPackage', desc: '', args: []);
+    return Intl.message(
+      'Package',
+      name: 'appPackage',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `klos is a local OPDS server that lets a Kindle download books from the phone over Wi-Fi.`
@@ -1236,7 +1402,12 @@ class S {
 
   /// `Licences`
   String get licenses {
-    return Intl.message('Licences', name: 'licenses', desc: '', args: []);
+    return Intl.message(
+      'Licences',
+      name: 'licenses',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Libraries used by the app and the licences they are published under.`
@@ -1851,7 +2022,12 @@ class S {
 
   /// `Untitled`
   String get untitled {
-    return Intl.message('Untitled', name: 'untitled', desc: '', args: []);
+    return Intl.message(
+      'Untitled',
+      name: 'untitled',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `not an Atom/OPDS catalog`
@@ -1986,12 +2162,22 @@ class S {
 
   /// `Cover`
   String get coverLabel {
-    return Intl.message('Cover', name: 'coverLabel', desc: '', args: []);
+    return Intl.message(
+      'Cover',
+      name: 'coverLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Contents`
   String get contentsLabel {
-    return Intl.message('Contents', name: 'contentsLabel', desc: '', args: []);
+    return Intl.message(
+      'Contents',
+      name: 'contentsLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Could not convert the book: {error}`
@@ -2026,7 +2212,12 @@ class S {
 
   /// `Book`
   String get bookFallbackTitle {
-    return Intl.message('Book', name: 'bookFallbackTitle', desc: '', args: []);
+    return Intl.message(
+      'Book',
+      name: 'bookFallbackTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Queued...`
@@ -2111,7 +2302,12 @@ class S {
 
   /// `Refresh`
   String get refresh {
-    return Intl.message('Refresh', name: 'refresh', desc: '', args: []);
+    return Intl.message(
+      'Refresh',
+      name: 'refresh',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Search results:`
@@ -2146,7 +2342,12 @@ class S {
 
   /// `Reset`
   String get reset {
-    return Intl.message('Reset', name: 'reset', desc: '', args: []);
+    return Intl.message(
+      'Reset',
+      name: 'reset',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The catalog is empty.`
@@ -2161,17 +2362,32 @@ class S {
 
   /// `&lt; Back`
   String get previousPage {
-    return Intl.message('&lt; Back', name: 'previousPage', desc: '', args: []);
+    return Intl.message(
+      '&lt; Back',
+      name: 'previousPage',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Next &gt;`
   String get nextPage {
-    return Intl.message('Next &gt;', name: 'nextPage', desc: '', args: []);
+    return Intl.message(
+      'Next &gt;',
+      name: 'nextPage',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Source:`
   String get source {
-    return Intl.message('Source:', name: 'source', desc: '', args: []);
+    return Intl.message(
+      'Source:',
+      name: 'source',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The book is being downloaded from the OPDS catalog. This may take a few minutes.`
@@ -2236,7 +2452,12 @@ class S {
 
   /// `Try again`
   String get retry {
-    return Intl.message('Try again', name: 'retry', desc: '', args: []);
+    return Intl.message(
+      'Try again',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Refresh status now`
@@ -2261,17 +2482,32 @@ class S {
 
   /// `Home`
   String get home {
-    return Intl.message('Home', name: 'home', desc: '', args: []);
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Error`
   String get errorTitle {
-    return Intl.message('Error', name: 'errorTitle', desc: '', args: []);
+    return Intl.message(
+      'Error',
+      name: 'errorTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `File ready`
   String get fileReady {
-    return Intl.message('File ready', name: 'fileReady', desc: '', args: []);
+    return Intl.message(
+      'File ready',
+      name: 'fileReady',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The mail app has opened on the phone. The attachment is already added — check the message and send it.`
@@ -2326,7 +2562,12 @@ class S {
 
   /// `Not found`
   String get notFoundTitle {
-    return Intl.message('Not found', name: 'notFoundTitle', desc: '', args: []);
+    return Intl.message(
+      'Not found',
+      name: 'notFoundTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Page not found`
@@ -2391,17 +2632,32 @@ class S {
 
   /// `Sending…`
   String get mailInProgress {
-    return Intl.message('Sending…', name: 'mailInProgress', desc: '', args: []);
+    return Intl.message(
+      'Sending…',
+      name: 'mailInProgress',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Get:`
   String get getBook {
-    return Intl.message('Get:', name: 'getBook', desc: '', args: []);
+    return Intl.message(
+      'Get:',
+      name: 'getBook',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Search`
   String get searchButton {
-    return Intl.message('Search', name: 'searchButton', desc: '', args: []);
+    return Intl.message(
+      'Search',
+      name: 'searchButton',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `{count, plural, =0{0 entries} =1{1 entry} other{{count} entries}}`
@@ -2919,7 +3175,12 @@ class S {
 
   /// `Home`
   String get homeLink {
-    return Intl.message('Home', name: 'homeLink', desc: '', args: []);
+    return Intl.message(
+      'Home',
+      name: 'homeLink',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `http://phone-ip:8080/`
@@ -2934,7 +3195,12 @@ class S {
 
   /// `File`
   String get fileFallback {
-    return Intl.message('File', name: 'fileFallback', desc: '', args: []);
+    return Intl.message(
+      'File',
+      name: 'fileFallback',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send book to Kindle`
@@ -3059,17 +3325,32 @@ class S {
 
   /// `{size} KB`
   String fileSizeKb(String size) {
-    return Intl.message('$size KB', name: 'fileSizeKb', desc: '', args: [size]);
+    return Intl.message(
+      '$size KB',
+      name: 'fileSizeKb',
+      desc: '',
+      args: [size],
+    );
   }
 
   /// `{size} MB`
   String fileSizeMb(String size) {
-    return Intl.message('$size MB', name: 'fileSizeMb', desc: '', args: [size]);
+    return Intl.message(
+      '$size MB',
+      name: 'fileSizeMb',
+      desc: '',
+      args: [size],
+    );
   }
 
   /// `Local files`
   String get localFiles {
-    return Intl.message('Local files', name: 'localFiles', desc: '', args: []);
+    return Intl.message(
+      'Local files',
+      name: 'localFiles',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Local folder`
@@ -3094,7 +3375,12 @@ class S {
 
   /// `↑ Up`
   String get localFolderUp {
-    return Intl.message('↑ Up', name: 'localFolderUp', desc: '', args: []);
+    return Intl.message(
+      '↑ Up',
+      name: 'localFolderUp',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Folder root`
@@ -3119,7 +3405,12 @@ class S {
 
   /// `Folder`
   String get localFolderLabel {
-    return Intl.message('Folder', name: 'localFolderLabel', desc: '', args: []);
+    return Intl.message(
+      'Folder',
+      name: 'localFolderLabel',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The Kindle cannot open {format} directly, and Amazon does not accept it by email. Try EPUB, MOBI or PDF instead.`
@@ -3294,12 +3585,22 @@ class S {
 
   /// `Reset`
   String get resetFolder {
-    return Intl.message('Reset', name: 'resetFolder', desc: '', args: []);
+    return Intl.message(
+      'Reset',
+      name: 'resetFolder',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Library`
   String get library {
-    return Intl.message('Library', name: 'library', desc: '', args: []);
+    return Intl.message(
+      'Library',
+      name: 'library',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Browse catalog`
@@ -3324,7 +3625,12 @@ class S {
 
   /// `Open series`
   String get openSeries {
-    return Intl.message('Open series', name: 'openSeries', desc: '', args: []);
+    return Intl.message(
+      'Open series',
+      name: 'openSeries',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `This book has no file to download.`
@@ -3419,7 +3725,12 @@ class S {
 
   /// `Favorites`
   String get favorites {
-    return Intl.message('Favorites', name: 'favorites', desc: '', args: []);
+    return Intl.message(
+      'Favorites',
+      name: 'favorites',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `No saved books yet. Open the catalog and tap the bookmark next to a book you want.`
@@ -3476,12 +3787,22 @@ class S {
 
   /// `← Back`
   String get catalogBack {
-    return Intl.message('← Back', name: 'catalogBack', desc: '', args: []);
+    return Intl.message(
+      '← Back',
+      name: 'catalogBack',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Next →`
   String get catalogForward {
-    return Intl.message('Next →', name: 'catalogForward', desc: '', args: []);
+    return Intl.message(
+      'Next →',
+      name: 'catalogForward',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Could not load the catalog`
@@ -3541,6 +3862,146 @@ class S {
       name: 'favoritesLog',
       desc: '',
       args: [count, ip],
+    );
+  }
+
+  /// `Check for updates`
+  String get updateCheck {
+    return Intl.message(
+      'Check for updates',
+      name: 'updateCheck',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checking for updates…`
+  String get updateChecking {
+    return Intl.message(
+      'Checking for updates…',
+      name: 'updateChecking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Version {version} is available`
+  String updateAvailable(String version) {
+    return Intl.message(
+      'Version $version is available',
+      name: 'updateAvailable',
+      desc: '',
+      args: [version],
+    );
+  }
+
+  /// `You have the latest version.`
+  String get updateNone {
+    return Intl.message(
+      'You have the latest version.',
+      name: 'updateNone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not check for updates: {error}`
+  String updateFailed(String error) {
+    return Intl.message(
+      'Could not check for updates: $error',
+      name: 'updateFailed',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Download and install`
+  String get updateDownload {
+    return Intl.message(
+      'Download and install',
+      name: 'updateDownload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Downloading… {percent}%`
+  String updateDownloading(int percent) {
+    return Intl.message(
+      'Downloading… $percent%',
+      name: 'updateDownloading',
+      desc: '',
+      args: [percent],
+    );
+  }
+
+  /// `The new version installs over this one, so settings, favorites and the chosen folder stay in place.`
+  String get updateInstallHint {
+    return Intl.message(
+      'The new version installs over this one, so settings, favorites and the chosen folder stay in place.',
+      name: 'updateInstallHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What's new`
+  String get updateNotes {
+    return Intl.message(
+      'What\'s new',
+      name: 'updateNotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not install the update: {error}`
+  String updateInstallFailed(String error) {
+    return Intl.message(
+      'Could not install the update: $error',
+      name: 'updateInstallFailed',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `GitHub answered {status}.`
+  String updateErrorGithub(int status) {
+    return Intl.message(
+      'GitHub answered $status.',
+      name: 'updateErrorGithub',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `The release has no APK for this phone.`
+  String get updateErrorNoApk {
+    return Intl.message(
+      'The release has no APK for this phone.',
+      name: 'updateErrorNoApk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The APK could not be downloaded.`
+  String get updateErrorDownload {
+    return Intl.message(
+      'The APK could not be downloaded.',
+      name: 'updateErrorDownload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not reach GitHub: {error}`
+  String updateErrorNetwork(String error) {
+    return Intl.message(
+      'Could not reach GitHub: $error',
+      name: 'updateErrorNetwork',
+      desc: '',
+      args: [error],
     );
   }
 }
