@@ -565,5 +565,27 @@ the chosen SAF tree. For downloads from the app the tests check saving MOBI
 unchanged, unpacking ZIP, converting EPUB and FB2 to MOBI, refusing without a
 chosen folder and choosing the most convenient format.
 
-The release build in the template is signed with the debug key. To publish,
-configure your own `signingConfig` in `android/app/build.gradle.kts`.
+## Releases
+
+CI builds an APK on every push to `master` and keeps it as a workflow
+artifact. To publish a GitHub release with the APK files:
+
+1. Bump `version` in `pubspec.yaml`, for example to `1.0.0+2`. The number
+   after `+` is the Android `versionCode` and must grow with every release.
+2. Commit the change.
+3. Push a tag:
+
+   ```powershell
+   git tag v1.0.0
+   git push origin master --tags
+   ```
+
+   A `v*` tag starts the **Release APK** workflow: it runs the checks, builds
+   split and universal APKs and attaches them to the GitHub release for the
+   tag.
+
+The release build is signed with the debug key, so it installs normally but
+cannot replace an APK signed with a different key. A debug key generated on a
+CI runner changes between runs; for a stable update path, keep one release
+keystore, store it and its passwords in GitHub Secrets and configure your own
+`signingConfig` in `android/app/build.gradle.kts`.
