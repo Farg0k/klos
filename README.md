@@ -28,17 +28,15 @@ Kindle (Experimental Browser)  ──HTTP──▶  phone (klos)  ──HTTP─�
   **Settings → Language** (Auto / English / Ukrainian);
 - auto / light / dark theme — **Settings → Theme**; Auto follows the phone's
   light or dark mode;
-- plain HTML without JavaScript — compatible with old Kindle browsers,
-  high contrast, no grey text;
-- nested catalogs and OPDS pagination (`next`/`previous`) with large buttons
-  at the top and bottom of the page; when the server does not provide a
-  `previous` link, klos remembers the navigation history and still shows a
-  working **Back** button;
+- plain HTML without JavaScript — works in old Kindle browsers and stays
+  readable on e-ink;
+- nested catalogs and OPDS pagination (`next`/`previous`); when the server
+  does not provide a `previous` link, klos remembers the navigation history
+  and still shows a working **Back** button;
 - catalog search when the OPDS server supports it (OpenSearch);
 - links to EPUB, MOBI, AZW/AZW3, PDF, CBZ, FB2, TXT, ZIP;
-- formats shown as buttons with clear borders: MOBI, which the Kindle opens
-  best, is highlighted as the primary button, other formats sit next to it as
-  secondary ones;
+- formats offered as separate actions: MOBI, which the Kindle opens best, is
+  the primary download, other formats are listed next to it;
 - automatic ZIP unpacking: for the Kindle klos takes MOBI/AZW3/AZW/PDF/TXT,
   for email — EPUB/PDF/TXT/RTF/DOC/DOCX/HTML, for conversion — EPUB or FB2;
   if the archive contains only EPUB or FB2, klos always converts it to MOBI
@@ -408,7 +406,7 @@ acquisition.
 | `lib/server/server_auth.dart` | PIN code, sessions and failed-attempt throttling |
 | `lib/server/html_pages.dart` | HTML for the Kindle |
 | `lib/server/favicon.dart` | SVG icon for the browser |
-| `lib/theme/app_theme.dart` | brand colour, light and dark themes |
+| `lib/theme/app_theme.dart` | light and dark themes |
 | `lib/server/file_names.dart` | safe file names, transliteration, MIME → extension |
 | `lib/server/url_codec.dart` | URL-safe tokens for links |
 | `android/.../MainActivity.kt` | SAF channel `klos/files` (folder picking, reading and writing) and the mail app |
@@ -424,14 +422,10 @@ a custom licenses panel with the list of libraries and full texts from
 `LicenseRegistry`. Both places save changes automatically, without a Save
 button.
 
-The splash screen is branded without third-party packages: Android 12+ uses
-the system SplashScreen API through `res/values-v31/styles.xml`
-(`windowSplashScreenBackground` and `windowSplashScreenAnimatedIcon`), while
-Android 11 and older use `res/drawable/launch_background.xml`. The background
-is the brand blue `#0D8BD0` (`splash_background`), the logo is a white reader
-on that background (`drawable/ic_splash_logo.xml`). The adaptive icon
-(`ic_launcher_background.xml`), the favicon and the notification accent use the
-same colour.
+Android 12+ draws the splash through the system SplashScreen API
+(`res/values-v31/styles.xml`), Android 11 and older through
+`res/drawable/launch_background.xml`; the logo is
+`drawable/ic_splash_logo.xml`.
 
 Local server routes:
 
