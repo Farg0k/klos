@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The klos brand blue: icon, splash and notification accent. -->
+    <color name="brand">#0D8BD0</color>
+    <color name="splash_background">@color/brand</color>
+</resources>

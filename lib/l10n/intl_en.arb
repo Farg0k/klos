@@ -1,0 +1,1012 @@
+{
+  "@@locale": "en",
+  "refreshAddresses": "Refresh IP addresses",
+  "settings": "Settings",
+  "serverSettings": "Server settings",
+  "serverSettingsHint": "The catalog, port, folder and Kindle delivery are set up on the main screen.",
+  "help": "Help",
+  "tagline": "klos • a local OPDS bridge for Kindle",
+  "serverRunning": "Server is running",
+  "exitDialogTitle": "Server is running",
+  "exitDialogMessage": "If you leave the app, the server will stop and downloads to the Kindle will be interrupted. To keep the server running in the background, press “Home”, not “Back”.",
+  "cancel": "Cancel",
+  "stopAndExit": "Stop and exit",
+  "helpTitle": "How to connect a Kindle",
+  "helpStep1": "1. Connect the Kindle and the phone to the same Wi-Fi network.",
+  "helpStep2": "2. On the Kindle, open Menu → Experimental Browser.",
+  "helpStep3": "3. Enter the server address:",
+  "helpStep4": "4. Choose a book and a format. “Send by email” delivers the book to your Kindle address (via SMTP or the phone's mail app), “Convert” creates a MOBI on the phone, and “Download” saves the file to the device.",
+  "helpStep5": "5. The file will appear in your Kindle library or in the Documents folder.",
+  "helpTip": "Tip: if a format doesn't open, try MOBI. To send by email, set your Kindle address and add the sender address in Amazon — then klos will send emails itself. Without SMTP, the phone's mail app opens instead; this works only while klos is open. The server keeps running in the background until you stop it.",
+  "close": "Close",
+  "serverStopped": "Server is stopped",
+  "serverRunningHint": "The Kindle can connect to this phone.",
+  "serverStoppedHint": "Start the server so the Kindle can download books.",
+  "addCatalogFirst": "Add an OPDS catalog address or choose a folder with books.",
+  "stopServer": "Stop server",
+  "startServer": "Start server",
+  "kindleAddress": "Kindle address",
+  "kindleAddressHint": "Enter this address in the Experimental Browser on your Kindle.",
+  "noIpAddress": "No IP address found. Check that Wi-Fi is connected.",
+  "addressPlaceholder": "http://phone-ip:{port}/",
+  "@addressPlaceholder": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "serverOfflineHint": "The server is stopped — the Kindle cannot connect until you start it.",
+  "catalog": "OPDS catalog",
+  "catalogNotSet": "No address added yet",
+  "kindleEmailMissing": "No Kindle address set. Add one to receive books by email.",
+  "smtpNotConfigured": "SMTP is not configured — the “send by email” button will open the phone's mail app.",
+  "kindleMail": "Kindle email",
+  "deliverySmtp": "Send by email via SMTP",
+  "log": "Log",
+  "clear": "Clear",
+  "logEmpty": "Kindle requests and downloads will appear here.",
+  "opdsServer": "OPDS server",
+  "catalogUrl": "Catalog address",
+  "catalogUrlHint": "http://192.168.1.20:8080/opds",
+  "catalogUrlHelper": "Link to an OPDS catalog (Atom XML). http:// can be omitted — it will be added automatically.",
+  "usernameOptional": "Username (optional)",
+  "passwordOptional": "Password (optional)",
+  "storedOnDevice": "Stored only on this device.",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "localServer": "Local server",
+  "port": "Port",
+  "portHelper": "Kindle address: http://phone-ip:port/",
+  "autoStart": "Start automatically",
+  "autoStartHint": "The server starts together with the app.",
+  "autoStartShort": "auto-start",
+  "autoStop": "Stop after inactivity",
+  "autoStopHint": "The server stops on its own when no device uses it for this long, so a forgotten server does not stay on the network.",
+  "autoStopOff": "Never",
+  "autoStopMinutes": "{minutes} min",
+  "@autoStopMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAwake": "Keep the screen on",
+  "keepAwakeHint": "Stops the phone from sleeping and closing the server while it runs. The screen stays lit, so the battery drains faster.",
+  "keepAwakeShort": "screen stays on",
+  "pinShort": "PIN",
+  "pinProtection": "PIN protection",
+  "pinProtectionHint": "Ask for a PIN before the Kindle can open the catalog. Recommended on a shared Wi-Fi network.",
+  "pinCode": "PIN code",
+  "pinHintOnKindle": "Enter this code once in the Kindle browser. The Kindle stays signed in until the server restarts.",
+  "pinRefresh": "New PIN",
+  "pinStartsWithServer": "The code appears here after the server starts.",
+  "pinPageTitle": "PIN required",
+  "pinPageIntro": "Enter the PIN shown in the klos app on the phone.",
+  "pinPageHint": "The PIN protects your library from other devices on the Wi-Fi network.",
+  "pinWrong": "Wrong PIN. Try again.",
+  "pinBlocked": "Too many wrong attempts. Wait a few minutes and reload the page.",
+  "pinSubmit": "Unlock",
+  "catalogAppearance": "Catalog appearance",
+  "showCovers": "Show covers",
+  "showCoversHint": "Book thumbnails in the catalog. Turn off if pages should load faster or without images.",
+  "kindleMailIntro": "The “send by email” button appears next to formats the Kindle cannot open directly (EPUB, FB2, CBZ, ZIP) as soon as you set a Kindle address. If SMTP is configured, klos sends the email itself; otherwise the phone's mail app opens with the attachment and address ready. MOBI, AZW3, PDF and TXT are downloaded as regular files, and klos unpacks ZIP archives by itself.",
+  "kindleEmail": "Kindle address",
+  "kindleEmailHint": "name",
+  "kindleEmailHelper": "Find it on Amazon: Manage Your Content and Devices → Preferences → Send to Kindle Email Address.",
+  "smtpOptional": "SMTP (optional)",
+  "smtpConfiguredShort": "Configured — klos sends emails itself.",
+  "smtpNotConfiguredShort": "Not configured — the mail app opens instead.",
+  "smtpIntro": "Fill this in so klos sends emails itself. Without SMTP, the “send by email” button opens the phone's mail app.",
+  "smtpHost": "SMTP server",
+  "smtpHostHint": "smtp.gmail.com",
+  "smtpHostHelper": "For example: smtp.gmail.com, smtp.ukr.net",
+  "smtpPort": "SMTP port",
+  "smtpPortHelper": "587 — STARTTLS, 465 — SSL",
+  "smtpSsl": "SSL/TLS immediately (port 465)",
+  "smtpSslHint": "Enable for port 465. Usually off for 587: the connection is secured with STARTTLS.",
+  "smtpUsername": "SMTP username",
+  "smtpUsernameHelper": "Usually your full email address.",
+  "smtpPassword": "SMTP password",
+  "smtpPasswordHelper": "For Gmail, use an app password. Stored only on this device.",
+  "senderEmail": "Sender address",
+  "senderEmailHint": "your.address@gmail.com",
+  "senderEmailHelper": "Must match the address added to Amazon as an approved sender.",
+  "sending": "Sending...",
+  "sendTestMail": "Send test email",
+  "securityInfo": "The server listens on the Wi-Fi network only. Without PIN protection every device on it can open the catalog, so use a trusted network. Changing the port restarts a running server.",
+  "settingsAutoSaveHint": "Changes are saved automatically.",
+  "checking": "Checking...",
+  "check": "Check",
+  "saving": "Saving...",
+  "save": "Save",
+  "settingsSaved": "Settings saved",
+  "saveFailed": "Could not save: {error}",
+  "@saveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionOk": "OK: “{title}”, entries: {count}{nextPage}",
+  "@connectionOk": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "nextPage": {
+        "type": "String"
+      }
+    }
+  },
+  "nextPageSuffix": ", there is a next page",
+  "genericError": "Error: {error}",
+  "@genericError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "testMailMissing": "Fill in the Kindle address, SMTP server and sender address, and select at least one format.",
+  "testMailSent": "The test email was handed to the SMTP server. Check your Kindle in a few minutes.",
+  "validateCatalogRequired": "Enter the OPDS catalog address",
+  "validateCatalogScheme": "The address must start with http:// or https://",
+  "validatePort": "Port must be between 1024 and 65535",
+  "validateSmtpPort": "Port must be between 1 and 65535",
+  "validateEmailRequired": "Enter an address",
+  "validateEmailInvalid": "Invalid email address",
+  "validateSmtpHost": "Enter only the server address, e.g. smtp.gmail.com",
+  "language": "Language",
+  "languageSystem": "System default",
+  "languageHint": "Language of the app and the Kindle pages. “System default” follows the phone settings.",
+  "theme": "Theme",
+  "themeHint": "“Auto” follows the phone's light or dark mode.",
+  "themeSystem": "Auto",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "aboutApp": "About the app",
+  "aboutAppHint": "Version, build and licences.",
+  "appVersion": "Version",
+  "appBuild": "Build",
+  "appPackage": "Package",
+  "aboutDescription": "klos is a local OPDS server that lets a Kindle download books from the phone over Wi-Fi.",
+  "licenses": "Licences",
+  "licensesHint": "Libraries used by the app and the licences they are published under.",
+  "licensesFullText": "Full licence texts",
+  "licensesPackages": "Licence texts by package",
+  "licensesLoading": "Loading licence texts…",
+  "licensesEmpty": "No licence information was found.",
+  "zipBroken": "The ZIP archive is damaged or password-protected and cannot be opened.",
+  "zipNoUsableFiles": "The ZIP archive contains no usable files.",
+  "zipTooLarge": "A file in the ZIP archive is too large (over {megabytes} MB).",
+  "@zipTooLarge": {
+    "placeholders": {
+      "megabytes": {
+        "type": "int"
+      }
+    }
+  },
+  "zipUnpackFailed": "Could not unpack “{name}” from the archive.",
+  "@zipUnpackFailed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zipEmptyFile": "The file “{name}” in the archive is empty.",
+  "@zipEmptyFile": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zipUnknownFormat": "Could not determine the format of “{name}”.",
+  "@zipUnknownFormat": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zipFound": " Found: {list}.",
+  "@zipFound": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "zipOnlyEpub": "The ZIP archive contains only an EPUB. klos converts it to MOBI on download.",
+  "zipNoKindleFile": "The ZIP archive contains no file the Kindle opens directly (MOBI, AZW3, AZW, PDF or TXT).",
+  "zipNoEmailFile": "The ZIP archive contains no file Amazon accepts (EPUB, PDF, TXT, RTF, DOC/DOCX or HTML).",
+  "zipNoConvertible": "The ZIP archive contains no EPUB or FB2, so there is nothing to convert.",
+  "zipOnlyFb2": "The ZIP archive contains only an FB2. klos converts it to MOBI on download.",
+  "logAppStarted": "App started",
+  "logServerStarted": "Server started on port {port}",
+  "@logServerStarted": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "logServerListening": "Listening on {addresses}",
+  "@logServerListening": {
+    "placeholders": {
+      "addresses": {
+        "type": "String"
+      }
+    }
+  },
+  "serverStartFailed": "Could not start the server: {error}",
+  "@serverStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "logServerStopped": "Server stopped",
+  "logServerAutoStopped": "Server stopped automatically after inactivity",
+  "logPinFailed": "Wrong PIN from {ip}",
+  "@logPinFailed": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "logPinGranted": "Kindle signed in from {ip}",
+  "@logPinGranted": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "logPinBlocked": "Too many wrong PINs from {ip}",
+  "@logPinBlocked": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "logPinRotated": "PIN replaced after repeated wrong guesses",
+  "logPinChanged": "PIN code updated",
+  "serverStopFailed": "Could not stop the server: {error}",
+  "@serverStopFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "logTestMailSent": "Email: test message sent to {email}",
+  "@logTestMailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "appNotOpen": "The klos app is not open on the phone right now. Open it on screen and try again.",
+  "logMailApp": "Email (mail app): “{title}”",
+  "@logMailApp": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogAddressRequired": "Enter the OPDS catalog address.",
+  "ipLookupFailed": "Could not determine the IP address: {error}",
+  "@ipLookupFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "portInUse": "Port {port} is already in use. Choose another port in settings.",
+  "@portInUse": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "mailNotConfigured": "Kindle email is not configured: enter the Kindle address, SMTP server, sender address and at least one format.",
+  "mailBody": "The book “{title}” was sent from the klos app.\n\nFile: {file}",
+  "@mailBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "file": {
+        "type": "String"
+      }
+    }
+  },
+  "testMailNotConfigured": "First fill in the Kindle address, SMTP server and sender address, and select at least one format.",
+  "testMailSubject": "klos: email check",
+  "testMailFileContent": "This is a test email from klos.\nIf you see it on the Kindle, email is configured correctly.\n",
+  "testMailBody": "Test email from klos.\n\nIf Amazon accepted the message, books will arrive on your Kindle.",
+  "mailTooLarge": "The file is larger than 25 MB — Amazon does not accept such emails. Try another format or download the book directly.",
+  "smtpAuthRejected": "The SMTP server rejected the login or password. For Gmail, use an app password, not your regular password.",
+  "smtpNoSecure": "The SMTP server does not support a secure connection. Check the port and the SSL switch.",
+  "smtpMessageRejected": "The mail server rejected the message: check the Kindle and sender addresses.",
+  "smtpNoGreeting": "The SMTP server did not send a greeting. Check the address and port.",
+  "smtpCommunication": "Error exchanging data with the SMTP server: {error}",
+  "@smtpCommunication": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mailSendFailed": "Could not send the email: {error}",
+  "@mailSendFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "smtpTimeout": "The SMTP server is not responding (timeout).",
+  "smtpTls": "TLS connection error with the SMTP server. Try another port (465 with SSL or 587 without SSL).",
+  "smtpConnectFailed": "Could not connect to the SMTP server: {error}",
+  "@smtpConnectFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsParseFailed": "Could not parse the OPDS catalog: {error}",
+  "@opdsParseFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsResponseTooLarge": "The OPDS server response is too large.",
+  "opdsReadFailed": "Error reading the response: {error}",
+  "@opdsReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "onlyHttpAddresses": "Only http:// and https:// addresses are supported.",
+  "opdsTimeout": "The OPDS server is not responding (timeout).",
+  "tlsError": "TLS connection error: {error}",
+  "@tlsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsConnectFailed": "Could not connect to the OPDS server: {error}",
+  "@opdsConnectFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionError": "Connection error: {error}",
+  "@connectionError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsAccessDenied": "The OPDS server denied access (HTTP {status}). Check the username and password in settings.",
+  "@opdsAccessDenied": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "opdsHttpStatus": "The OPDS server returned HTTP {status}.",
+  "@opdsHttpStatus": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "untitled": "Untitled",
+  "notAtomFeed": "not an Atom/OPDS catalog",
+  "invalidJson": "invalid JSON received",
+  "notOpds2Feed": "not an OPDS 2.0 catalog",
+  "opdsHtmlInsteadOfFile": "The OPDS server returned an HTML page instead of a file. You may need to log in, or access to this book is restricted.",
+  "epubNotZip": "The file is not a valid EPUB (ZIP): {error}",
+  "@epubNotZip": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "epubEmpty": "The EPUB file is empty.",
+  "epubNoOpf": "The EPUB file has no OPF manifest.",
+  "epubOpfFailed": "Could not read the OPF manifest: {error}",
+  "@epubOpfFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "epubNoManifest": "The book has no manifest.",
+  "epubNoText": "The book has no text to convert.",
+  "epubTextNotFound": "Could not find the book text. The EPUB may have an unusual structure or be DRM-protected.",
+  "epubDrm": "The book is DRM-protected and cannot be converted. Download another format or email the book to your Kindle.",
+  "epubChapter": "Chapter {index}",
+  "@epubChapter": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "coverLabel": "Cover",
+  "contentsLabel": "Contents",
+  "conversionFailed": "Could not convert the book: {error}",
+  "@conversionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "convertUnsupportedFormat": "This format cannot be converted on the phone. EPUB and FB2 are supported.",
+  "mobiTextTooLarge": "The book text is too large to convert.",
+  "bookFallbackTitle": "Book",
+  "mailStageQueued": "Queued...",
+  "mailStageDownloading": "Downloading the book from OPDS...",
+  "mailStageSending": "Sending the email to Kindle...",
+  "mailStageDone": "Email sent",
+  "mailStageFailed": "Could not send",
+  "shareBody": "The book “{title}” from klos",
+  "@shareBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "shareOpenFailed": "Could not open the mail app.",
+  "shareAndroidOnly": "Sending by email is only available in the Android build of klos.",
+  "refresh": "Refresh",
+  "searchResults": "Search results:",
+  "searchCatalog": "Search the catalog",
+  "searchHint": "Book title or author",
+  "reset": "Reset",
+  "catalogEmpty": "The catalog is empty.",
+  "previousPage": "&lt; Back",
+  "nextPage": "Next &gt;",
+  "source": "Source:",
+  "mailDownloadingHint": "The book is being downloaded from the OPDS catalog. This may take a few minutes.",
+  "mailSendingHint": "The email is being handed to the SMTP server. Do not close the klos app.",
+  "mailAccepted": "The email was accepted by the mail server.",
+  "mailAcceptedTo": "The email to {email} was accepted by the mail server.",
+  "@mailAcceptedTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "mailAmazonHint": "Amazon processes the book separately: it will appear in your Kindle library within a few minutes. If the sender address is not on the approved list in your Amazon settings, the email will be rejected.",
+  "unknownError": "Unknown error.",
+  "retry": "Try again",
+  "refreshStatus": "Refresh status now",
+  "autoRefresh": "The page refreshes automatically every 4 seconds.",
+  "home": "Home",
+  "errorTitle": "Error",
+  "fileReady": "File ready",
+  "sharePrepared": "The mail app has opened on the phone. The attachment is already added — check the message and send it.",
+  "sharePreparedTo": "The mail app has opened on the phone. The attachment is already added, the address <b>{email}</b> is filled in — check the message and send it.",
+  "@sharePreparedTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "shareHint": "If the mail app did not open, open klos on the phone screen and try again. The file is temporarily kept in the app cache.",
+  "notConfiguredBody": "No OPDS catalog has been added and no folder with books has been chosen.",
+  "notConfiguredHelp": "Open the klos app on your phone, add the OPDS server address or choose a folder with books, then start the local server.",
+  "notFoundTitle": "Not found",
+  "notFoundHeading": "Page not found",
+  "notFoundHint": "The link may be outdated.",
+  "downloadAction": "{format} (download)",
+  "@downloadAction": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "emailAction": "{format} (send by email)",
+  "@emailAction": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadInProgress": "Downloading…",
+  "actionWaitHint": "Please wait, this may take a minute. Don't press the button again.",
+  "mailInProgress": "Sending…",
+  "getBook": "Get:",
+  "searchButton": "Search",
+  "entriesCount": "{count, plural, =0{0 entries} =1{1 entry} other{{count} entries}}",
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sendByEmailTitle": "Send by email",
+  "webHelpHeading": "How to download a book",
+  "webHelpStep1": "Connect the Kindle and the phone to the same Wi-Fi network.",
+  "webHelpStep2": "On the Kindle, open <b>Experimental Browser</b>.",
+  "webHelpStep3": "Enter this server address:<br><b>{address}</b>",
+  "@webHelpStep3": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+  "webHelpStep4": "Choose a book and a format. <b>(download)</b> saves the file to the Kindle, <b>(send by email)</b> sends it to the Kindle address — automatically via SMTP if configured, or via the phone's mail app — and <b>(convert)</b> creates a MOBI on the phone.",
+  "webHelpStep5": "The file will appear in your Kindle library or in the <b>Documents</b> folder.",
+  "webHelpFormats": "If a format does not open, try MOBI or AZW3. klos unpacks ZIP archives automatically: for the Kindle it takes MOBI, AZW3, AZW, PDF or TXT, for email — EPUB, PDF, TXT, RTF, DOC/DOCX or HTML, and for conversion — EPUB. If there is only FB2 or CBZ inside, klos will say so.",
+  "webHelpSearch": "If the catalog has a <b>Search</b> field, search works directly from the Kindle: enter an author or a book title.",
+  "webHelpLimits": "Conversion simplifies complex layout and does not work with DRM. Sending via the mail app works only while the klos app is open on the phone: the file is temporarily stored in the app cache.",
+  "webHelpPrivacy": "Books are not stored on the phone permanently: the server only passes them from the OPDS catalog to the Kindle. The phone must be nearby and connected to the same network. While the server is on, a notification is visible in the Android notification shade.",
+  "serverErrorLog": "Server error: {error}",
+  "@serverErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "methodNotSupported": "The {method} method is not supported.",
+  "@methodNotSupported": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "requestErrorLog": "Request error {uri}: {error}",
+  "@requestErrorLog": {
+    "placeholders": {
+      "uri": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "internalServerError": "Internal server error: {error}",
+  "@internalServerError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badImageAddress": "The link has no valid image address.",
+  "notAnImage": "The OPDS server returned something other than an image.",
+  "coverLog": "Cover: {error}",
+  "@coverLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageFetchFailed": "Could not fetch the image: {error}",
+  "@imageFetchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badCatalogAddress": "The link has no valid catalog address.",
+  "catalogLog": "Catalog: {title} ({count}) — {ip}",
+  "@catalogLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogErrorLog": "Catalog error {url}: {error}",
+  "@catalogErrorLog": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badSearchTemplate": "The link has no valid search template.",
+  "searchUrlFailed": "Could not build the search address.",
+  "openSearchLog": "OpenSearch: {error}",
+  "@openSearchLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badFileAddress": "The link has no valid file address.",
+  "downloadTooLarge": "The file is too large to download (over 120 MB).",
+  "downloadLog": "Download: {name} — {ip}",
+  "@downloadLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadFromZipLog": "Download: {name} — {ip} (from ZIP)",
+  "@downloadFromZipLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "fileTransferFailed": "Could not transfer the file: {error}",
+  "@fileTransferFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "fileTransferInterrupted": "File transfer interrupted: {error}",
+  "@fileTransferInterrupted": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badBookAddress": "The link has no valid book address.",
+  "opdsEmptyFile": "The OPDS server returned an empty file.",
+  "conversionLog": "Conversion: “{title}” — {ip}",
+  "@conversionLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "conversionDoneLog": "Conversion: done “{file}” — {ip}",
+  "@conversionDoneLog": {
+    "placeholders": {
+      "file": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "sendUnavailable": "Sending by email is not available in this build of the app.",
+  "appNotOpenMailApp": "The klos app is not open on the phone right now. Open it on screen and try again — the mail app will open with the message ready.",
+  "tooLargeToEmail": "The file is too large to send by email (over 100 MB).",
+  "mailAppLog": "Email (mail app): “{name}” — {ip}",
+  "@mailAppLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "mailAppFromZipLog": "Email (mail app): “{name}” — {ip} (from ZIP)",
+  "@mailAppFromZipLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "mailPrepareErrorLog": "Email sending error: {error}",
+  "@mailPrepareErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "prepareFileFailed": "Could not prepare the file: {error}",
+  "@prepareFileFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "kindleAddressMissing": "No Kindle address is set. Open the klos app, go to “Settings” → “Kindle email” and enter the Kindle address. SMTP can be left empty: the mail app will open instead.",
+  "amazonRejectsFormats": "Amazon's Send to Kindle accepts EPUB, PDF, TXT, DOC/DOCX and images by email; it does not convert FB2, CBZ or ZIP. Add the sender address to the “Approved Personal Document E-mail List” in your Amazon settings, otherwise the email will be rejected.",
+  "mailQueuedLog": "Email: queued “{title}” — {ip}",
+  "@mailQueuedLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "mailNotConfiguredShort": "Kindle email is not configured.",
+  "mailSkippedLog": "Email: skipped — Kindle email is not configured",
+  "mailDownloadLog": "Email: downloading “{title}”",
+  "@mailDownloadLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mailSentLog": "Email: “{title}” sent to {email}",
+  "@mailSentLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "mailErrorLog": "Email: error — {error}",
+  "@mailErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeLink": "Home",
+  "helpAddressPlaceholder": "http://phone-ip:8080/",
+  "fileFallback": "File",
+  "shareChooserTitle": "Send book to Kindle",
+  "shareMissingArgs": "No file or Kindle address was provided.",
+  "shareMissingFile": "The book file was not found.",
+  "notificationChannelName": "Local server",
+  "notificationChannelDescription": "Notifications about the OPDS server for Kindle",
+  "notificationRunning": "The server is running",
+  "notificationRunningPort": "The server is running · port {port}",
+  "@notificationRunningPort": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "zipTooManyEntries": "The ZIP archive contains too many files.",
+  "epubTooManyEntries": "The EPUB contains too many files to convert safely.",
+  "epubEntryTooLarge": "A file inside the EPUB is too large to convert.",
+  "epubExpandsTooMuch": "The EPUB expands to too much data to convert.",
+  "fileSizeBytes": "{size} B",
+  "@fileSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "fileSizeKb": "{size} KB",
+  "@fileSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSizeMb": "{size} MB",
+  "@fileSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "localFiles": "Local files",
+  "localFolder": "Local folder",
+  "localFolderDefaultName": "Downloads",
+  "localFolderUp": "↑ Up",
+  "localFolderRoot": "Folder root",
+  "localFolderEmpty": "No books in this folder. Subfolders are shown here too.",
+  "localFolderLabel": "Folder",
+  "localFormatNeedsDelivery": "The Kindle cannot open {format} directly, and Amazon does not accept it by email. Try EPUB, MOBI or PDF instead.",
+  "@localFormatNeedsDelivery": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderNotConnected": "No folder is connected yet. Open klos → Settings → Local files and choose a folder with books. On Android 11+ the Downloads folder itself cannot be selected — choose a subfolder such as Download/Books.",
+  "localFolderNotConnectedShort": "Access not granted yet",
+  "localFolderConnectHint": "The phone shares only the folder you confirm: Android does not let the app read all storage.",
+  "localFolderConnectedShort": "Access granted",
+  "localFolderBadLink": "This link does not belong to the selected folder.",
+  "localFolderAccessLost": "Access to the folder was lost. Open klos → Settings → Local files and choose the folder again.",
+  "localFolderErrorLog": "Local folder: error — {error}",
+  "@localFolderErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localCatalogLog": "Local folder “{title}”: {count} entries — {ip}",
+  "@localCatalogLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderAndroidOnly": "Choosing a folder is available only on Android.",
+  "localFolderPickerFailed": "Could not open the folder picker: {error}",
+  "@localFolderPickerFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderReadFailed": "Could not read the folder: {error}",
+  "@localFolderReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFileReadFailed": "Could not read the file: {error}",
+  "@localFileReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFileTooLarge": "The file is larger than {mb} MB and cannot be used this way.",
+  "@localFileTooLarge": {
+    "placeholders": {
+      "mb": {
+        "type": "int"
+      }
+    }
+  },
+  "localFolderHint": "The Kindle sees the books from this folder, including subfolders. Android will ask you to confirm the folder once. If the books are in Downloads, select a subfolder — on Android 11+ the Downloads root itself cannot be selected. The choice is applied immediately.",
+  "localFolderDefaultNote": "Android 11+ does not allow confirming the Downloads root. In the picker open Downloads, tap ⋮ → New folder, create e.g. Books, move the books there and select that subfolder. On Android 10 and older you can select Downloads itself.",
+  "chooseFolder": "Choose folder",
+  "resetFolder": "Reset",
+  "library": "Library",
+  "browseCatalog": "Browse catalog",
+  "browseCatalogHint": "Read the catalog here and save books to favorites",
+  "openSeries": "Open series",
+  "downloadLinkMissing": "This book has no file to download.",
+  "downloadToFolder": "Download to folder",
+  "downloadToFolderNote": "The book is saved to the chosen folder, and the Kindle sees it under “Local files”. klos converts EPUB and FB2 to MOBI and unpacks ZIP archives.",
+  "downloadFolderMissing": "To save a book for the Kindle, choose a local folder on the home screen.",
+  "savedToFolder": "Saved: {name}",
+  "@savedToFolder": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "saveToFolderFailed": "Could not save the book: {error}",
+  "@saveToFolderFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderNotChosen": "Choose a local folder on the home screen first.",
+  "localFolderWriteFailed": "Could not write the file to the folder: {error}",
+  "@localFolderWriteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderWriteDenied": "No permission to write to the folder. Choose the folder again on the home screen.",
+  "favorites": "Favorites",
+  "favoritesEmpty": "No saved books yet. Open the catalog and tap the bookmark next to a book you want.",
+  "favoritesEmptyShort": "Nothing saved yet",
+  "favoritesCount": "{count, plural, one{{count} book} other{{count} books}}",
+  "@favoritesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "favoriteAdd": "Add to favorites",
+  "favoriteRemove": "Remove from favorites",
+  "catalogBack": "← Back",
+  "catalogForward": "Next →",
+  "catalogLoadFailed": "Could not load the catalog",
+  "catalogLoadFailedHint": "Check the catalog address and the internet connection.",
+  "favoritesEmptyOnKindleShort": "Favorites are empty.",
+  "webHelpActions": "“send by email” goes to the Kindle address; “download” for EPUB/FB2 builds a MOBI on the phone — experimental, and complex layout is simplified. The email button appears only for formats Amazon accepts (EPUB, PDF, TXT, DOC/DOCX, RTF, HTML). If SMTP is configured, the email is sent automatically; otherwise the phone's mail app opens with the attachment ready. Everything else is downloaded as a regular file; klos unpacks ZIP archives itself and takes the file suitable for the Kindle or Amazon.",
+  "webHelpFavorites": "Favorites are the books you saved in the klos app. Open Library → Browse catalog, tap the bookmark next to a book, and it appears in Favorites — on the Kindle too, with the same download and email buttons.",
+  "favoritesLog": "Favorites: {count} book(s) — {ip}",
+  "@favoritesLog": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:6870905109906953387",
+      "lastPropertyId": "23:4377301391766066193",
+      "name": "SettingsEntity",
+      "properties": [
+        {
+          "id": "1:8844440335124415787",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5564425823566127588",
+          "name": "catalogUrl",
+          "type": 9
+        },
+        {
+          "id": "3:699646229350966616",
+          "name": "username",
+          "type": 9
+        },
+        {
+          "id": "4:6763830893718522393",
+          "name": "password",
+          "type": 9
+        },
+        {
+          "id": "5:7706492643989485415",
+          "name": "port",
+          "type": 6
+        },
+        {
+          "id": "6:9154168043893494858",
+          "name": "autoStart",
+          "type": 1
+        },
+        {
+          "id": "8:2962344431007594910",
+          "name": "showCovers",
+          "type": 1
+        },
+        {
+          "id": "9:5268851096554608217",
+          "name": "language",
+          "type": 9
+        },
+        {
+          "id": "10:5540501346053039065",
+          "name": "themeMode",
+          "type": 9
+        },
+        {
+          "id": "11:8575213697068453014",
+          "name": "kindleEmail",
+          "type": 9
+        },
+        {
+          "id": "13:6493986250662638924",
+          "name": "smtpHost",
+          "type": 9
+        },
+        {
+          "id": "14:6872616142597522933",
+          "name": "smtpPort",
+          "type": 6
+        },
+        {
+          "id": "15:8897713981106462789",
+          "name": "smtpUsername",
+          "type": 9
+        },
+        {
+          "id": "16:5032351275785026168",
+          "name": "smtpPassword",
+          "type": 9
+        },
+        {
+          "id": "17:6889702265605859937",
+          "name": "senderEmail",
+          "type": 9
+        },
+        {
+          "id": "18:1532209034965848138",
+          "name": "smtpSsl",
+          "type": 1
+        },
+        {
+          "id": "19:3479307009930795824",
+          "name": "localFolderUri",
+          "type": 9
+        },
+        {
+          "id": "20:5144655938372122305",
+          "name": "localFolderName",
+          "type": 9
+        },
+        {
+          "id": "21:2506875088744574485",
+          "name": "keepAwake",
+          "type": 1
+        },
+        {
+          "id": "22:4879672247313466825",
+          "name": "requirePin",
+          "type": 1
+        },
+        {
+          "id": "23:4377301391766066193",
+          "name": "autoStopMinutes",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:1084036299193036133",
+      "lastPropertyId": "8:8963133228075227485",
+      "name": "FavoriteEntity",
+      "properties": [
+        {
+          "id": "1:34816227263603968",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3289241479493836919",
+          "name": "key",
+          "type": 9
+        },
+        {
+          "id": "3:4765001544685543269",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "4:4410868239220344435",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "5:8779147216795791858",
+          "name": "summary",
+          "type": 9
+        },
+        {
+          "id": "6:1534977216908695071",
+          "name": "links",
+          "type": 9
+        },
+        {
+          "id": "7:4963471367674098203",
+          "name": "catalogUrl",
+          "type": 9
+        },
+        {
+          "id": "8:8963133228075227485",
+          "name": "addedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:1084036299193036133",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    1678924772704767934,
+    3834183992892922338
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

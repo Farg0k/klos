@@ -1,0 +1,984 @@
+{
+  "@@locale": "uk",
+  "refreshAddresses": "Оновити IP-адреси",
+  "settings": "Налаштування",
+  "serverSettings": "Налаштування сервера",
+  "serverSettingsHint": "Каталог, порт, папку й доставку на Kindle налаштовують на головному екрані.",
+  "help": "Довідка",
+  "tagline": "klos • локальний OPDS-міст для Kindle",
+  "serverRunning": "Сервер працює",
+  "exitDialogTitle": "Сервер працює",
+  "exitDialogMessage": "Якщо вийти із застосунку, сервер зупиниться, а завантаження на Kindle перервуться. Щоб залишити сервер у фоні, натисніть «Додому», а не «Назад».",
+  "cancel": "Скасувати",
+  "stopAndExit": "Зупинити й вийти",
+  "helpTitle": "Як підключити Kindle",
+  "helpStep1": "1. Підключіть Kindle і телефон до однієї Wi-Fi мережі.",
+  "helpStep2": "2. На Kindle відкрийте Menu → Experimental Browser.",
+  "helpStep3": "3. Введіть адресу сервера:",
+  "helpStep4": "4. Виберіть книгу та формат. Позначка «на пошту» надішле книгу на адресу Kindle (через SMTP або поштову програму на телефоні), «конвертувати» створить MOBI на телефоні, а «завантажити» збереже файл на пристрої.",
+  "helpStep5": "5. Файл з'явиться в бібліотеці Kindle або в теці Documents.",
+  "helpTip": "Порада: якщо формат не відкривається, спробуйте MOBI. Для надсилання листом вкажіть адресу Kindle і додайте адресу відправника в Amazon — тоді klos надсилатиме листи сам. Без SMTP відкриється поштова програма на телефоні; це працює, лише коли klos відкрито. Сервер працює у фоні, поки ви його не зупините.",
+  "close": "Закрити",
+  "serverStopped": "Сервер зупинено",
+  "serverRunningHint": "Kindle може підключитися до цього телефона.",
+  "serverStoppedHint": "Запустіть сервер, щоб Kindle міг завантажувати книги.",
+  "addCatalogFirst": "Додайте адресу OPDS-каталогу або виберіть папку з книгами.",
+  "stopServer": "Зупинити сервер",
+  "startServer": "Запустити сервер",
+  "kindleAddress": "Адреса для Kindle",
+  "kindleAddressHint": "Введіть цю адресу в Experimental Browser на Kindle.",
+  "noIpAddress": "IP-адресу не знайдено. Перевірте, чи підключено Wi-Fi.",
+  "addressPlaceholder": "http://IP-телефону:{port}/",
+  "serverOfflineHint": "Сервер зараз зупинений — Kindle не зможе підключитися, доки ви його не запустите.",
+  "catalog": "OPDS-каталог",
+  "catalogNotSet": "Адресу ще не додано",
+  "kindleEmailMissing": "Адресу Kindle не вказано. Додайте її, щоб отримати книгу листом.",
+  "smtpNotConfigured": "SMTP не налаштовано — кнопка «на пошту» відкриватиме поштову програму на телефоні.",
+  "kindleMail": "Пошта Kindle",
+  "deliverySmtp": "Надсилання листом через SMTP",
+  "log": "Журнал",
+  "clear": "Очистити",
+  "logEmpty": "Тут з'являться запити Kindle та завантаження.",
+  "opdsServer": "OPDS-сервер",
+  "catalogUrl": "Адреса каталогу",
+  "catalogUrlHint": "http://192.168.1.20:8080/opds",
+  "catalogUrlHelper": "Посилання на OPDS-каталог (Atom XML). Можна без http:// — він додасться автоматично.",
+  "usernameOptional": "Логін (необов'язково)",
+  "passwordOptional": "Пароль (необов'язково)",
+  "storedOnDevice": "Зберігається лише на цьому пристрої.",
+  "showPassword": "Показати пароль",
+  "hidePassword": "Приховати пароль",
+  "localServer": "Локальний сервер",
+  "port": "Порт",
+  "portHelper": "Адреса для Kindle: http://IP-телефона:порт/",
+  "autoStart": "Запускати автоматично",
+  "autoStartHint": "Сервер стартуватиме разом із застосунком.",
+  "autoStartShort": "автозапуск",
+  "autoStop": "Зупиняти після бездіяльності",
+  "autoStopHint": "Сервер сам зупиниться, якщо ним ніхто не користується цей час, щоб забутий сервер не висів у мережі.",
+  "autoStopOff": "Ніколи",
+  "autoStopMinutes": "{minutes} хв",
+  "@autoStopMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "keepAwake": "Не вимикати екран",
+  "keepAwakeHint": "Не дає телефону заснути й зупинити сервер, поки він працює. Екран постійно світиться, тож батарея розряджається швидше.",
+  "keepAwakeShort": "екран не гасне",
+  "pinShort": "PIN",
+  "pinProtection": "Захист PIN-кодом",
+  "pinProtectionHint": "Питати PIN-код перед відкриттям каталогу на Kindle. Радитьмо, якщо до Wi-Fi мають доступ інші люди.",
+  "pinCode": "PIN-код",
+  "pinHintOnKindle": "Введіть цей код один раз у браузері Kindle. Kindle залишиться в системі до перезапуску сервера.",
+  "pinRefresh": "Новий PIN",
+  "pinStartsWithServer": "Код з'явиться тут після запуску сервера.",
+  "pinPageTitle": "Потрібен PIN-код",
+  "pinPageIntro": "Введіть PIN-код, який показано в застосунку klos на телефоні.",
+  "pinPageHint": "PIN-код захищає вашу бібліотеку від інших пристроїв у Wi-Fi мережі.",
+  "pinWrong": "Неправильний PIN. Спробуйте ще раз.",
+  "pinBlocked": "Забагато невдалих спроб. Зачекайте кілька хвилин і оновіть сторінку.",
+  "pinSubmit": "Увійти",
+  "catalogAppearance": "Вигляд каталогу",
+  "showCovers": "Показувати обкладинки",
+  "showCoversHint": "Мініатюри книжок у каталозі. Вимкніть, якщо сторінки мають відкриватися швидше або без картинок.",
+  "kindleMailIntro": "Кнопка «на пошту» з'являється біля форматів, які Kindle не відкриває напряму (EPUB, FB2, CBZ, ZIP), щойно ви вкажете адресу Kindle. Якщо заповнити SMTP, klos надсилатиме лист сам; якщо ні — відкриється поштова програма на телефоні з готовим вкладенням і заповненою адресою. MOBI, AZW3, PDF і TXT завантажуються як звичайні файли, а ZIP klos розпаковує сам.",
+  "kindleEmail": "Адреса Kindle",
+  "kindleEmailHint": "ім'я",
+  "kindleEmailHelper": "Знайдіть її на Amazon: Manage Your Content and Devices → Preferences → Send to Kindle Email Address.",
+  "smtpOptional": "SMTP (необов'язково)",
+  "smtpConfiguredShort": "Налаштовано — klos надсилає листи сам.",
+  "smtpNotConfiguredShort": "Не налаштовано — відкриється поштова програма.",
+  "smtpIntro": "Заповніть, щоб klos надсилав листи сам. Без SMTP кнопка «на пошту» відкриватиме поштову програму на телефоні.",
+  "smtpHost": "SMTP-сервер",
+  "smtpHostHint": "smtp.gmail.com",
+  "smtpHostHelper": "Наприклад: smtp.gmail.com, smtp.ukr.net",
+  "smtpPort": "SMTP-порт",
+  "smtpPortHelper": "587 — STARTTLS, 465 — SSL",
+  "smtpSsl": "SSL/TLS відразу (порт 465)",
+  "smtpSslHint": "Увімкніть для порту 465. Для 587 зазвичай вимкнено: з'єднання захищається через STARTTLS.",
+  "smtpUsername": "SMTP-логін",
+  "smtpUsernameHelper": "Зазвичай це повна адреса пошти.",
+  "smtpPassword": "SMTP-пароль",
+  "smtpPasswordHelper": "Для Gmail — пароль застосунку. Зберігається лише на цьому пристрої.",
+  "senderEmail": "Адреса відправника",
+  "senderEmailHint": "your.address@gmail.com",
+  "senderEmailHelper": "Має збігатися з адресою, доданою в Amazon як дозволений відправник.",
+  "sending": "Надсилання...",
+  "sendTestMail": "Надіслати тестовий лист",
+  "securityInfo": "Сервер слухає лише Wi-Fi мережу. Без захисту PIN-кодом каталог може відкрити будь-який пристрій у ній, тож користуйтеся довіреною мережею. Зміна порту перезапускає запущений сервер.",
+  "settingsAutoSaveHint": "Зміни зберігаються автоматично.",
+  "checking": "Перевірка...",
+  "check": "Перевірити",
+  "saving": "Збереження...",
+  "save": "Зберегти",
+  "settingsSaved": "Налаштування збережено",
+  "saveFailed": "Не вдалося зберегти: {error}",
+  "@saveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionOk": "OK: «{title}», записів: {count}{nextPage}",
+  "@connectionOk": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "nextPage": {
+        "type": "String"
+      }
+    }
+  },
+  "nextPageSuffix": ", є наступна сторінка",
+  "genericError": "Помилка: {error}",
+  "@genericError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "testMailMissing": "Заповніть адресу Kindle, SMTP-сервер, адресу відправника і виберіть хоча б один формат.",
+  "testMailSent": "Тестовий лист передано SMTP-серверу. Перевірте Kindle за кілька хвилин.",
+  "validateCatalogRequired": "Вкажіть адресу OPDS-каталогу",
+  "validateCatalogScheme": "Адреса має починатися з http:// або https://",
+  "validatePort": "Порт має бути від 1024 до 65535",
+  "validateSmtpPort": "Порт має бути від 1 до 65535",
+  "validateEmailRequired": "Вкажіть адресу",
+  "validateEmailInvalid": "Некоректна адреса пошти",
+  "validateSmtpHost": "Вкажіть лише адресу сервера, наприклад smtp.gmail.com",
+  "language": "Мова",
+  "languageSystem": "Як у системі",
+  "languageHint": "Мова застосунку та сторінок для Kindle. «Як у системі» бере мову з налаштувань телефона.",
+  "theme": "Тема",
+  "themeHint": "«Авто» бере тему з налаштувань телефона.",
+  "themeSystem": "Авто",
+  "themeLight": "Світла",
+  "themeDark": "Темна",
+  "aboutApp": "Про застосунок",
+  "aboutAppHint": "Версія, збірка та ліцензії.",
+  "appVersion": "Версія",
+  "appBuild": "Збірка",
+  "appPackage": "Пакет",
+  "aboutDescription": "klos — локальний OPDS-сервер, який дає Kindle змогу завантажувати книги з телефона через Wi-Fi.",
+  "licenses": "Ліцензії",
+  "licensesHint": "Бібліотеки, які використовує застосунок, та ліцензії, за якими їх опубліковано.",
+  "licensesFullText": "Повні тексти ліцензій",
+  "licensesPackages": "Тексти ліцензій за пакетами",
+  "licensesLoading": "Завантажуємо тексти ліцензій…",
+  "licensesEmpty": "Даних про ліцензії не знайдено.",
+  "zipBroken": "ZIP-архів пошкоджений або захищений паролем і не відкривається.",
+  "zipNoUsableFiles": "У ZIP-архіві немає придатних файлів.",
+  "zipTooLarge": "Файл у ZIP-архіві завеликий (понад {megabytes} МБ).",
+  "@zipTooLarge": {
+    "placeholders": {
+      "megabytes": {
+        "type": "int"
+      }
+    }
+  },
+  "zipUnpackFailed": "Не вдалося розпакувати «{name}» з архіву.",
+  "@zipUnpackFailed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zipEmptyFile": "Файл «{name}» в архіві порожній.",
+  "@zipEmptyFile": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zipUnknownFormat": "Не вдалося визначити формат файлу «{name}».",
+  "@zipUnknownFormat": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zipFound": " Знайдено: {list}.",
+  "@zipFound": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "zipOnlyEpub": "У ZIP-архіві лише EPUB. klos перетворює його на MOBI під час завантаження.",
+  "zipNoKindleFile": "У ZIP-архіві немає файлу, який Kindle відкриває напряму (MOBI, AZW3, AZW, PDF або TXT).",
+  "zipNoEmailFile": "У ZIP-архіві немає файлу, який приймає Amazon (EPUB, PDF, TXT, RTF, DOC/DOCX або HTML).",
+  "zipNoConvertible": "У ZIP-архіві немає EPUB або FB2, тому конвертувати нічого.",
+  "zipOnlyFb2": "У ZIP-архіві лише FB2. klos перетворює його на MOBI під час завантаження.",
+  "logAppStarted": "Застосунок запущено",
+  "logServerStarted": "Сервер запущено на порту {port}",
+  "@logServerStarted": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "logServerListening": "Слухає на {addresses}",
+  "@logServerListening": {
+    "placeholders": {
+      "addresses": {
+        "type": "String"
+      }
+    }
+  },
+  "serverStartFailed": "Не вдалося запустити сервер: {error}",
+  "@serverStartFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "logServerStopped": "Сервер зупинено",
+  "logServerAutoStopped": "Сервер зупинився сам через бездіяльність",
+  "logPinFailed": "Неправильний PIN з {ip}",
+  "logPinGranted": "Kindle увійшов з {ip}",
+  "logPinBlocked": "Забагато неправильних PIN з {ip}",
+  "logPinRotated": "PIN змінено після повторних невдалих спроб",
+  "logPinChanged": "PIN-код оновлено",
+  "serverStopFailed": "Не вдалося зупинити сервер: {error}",
+  "@serverStopFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "logTestMailSent": "Пошта: тестовий лист надіслано на {email}",
+  "@logTestMailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "appNotOpen": "Застосунок klos зараз не відкритий на телефоні. Відкрийте його на екрані та повторіть.",
+  "logMailApp": "Пошта (поштова програма): «{title}»",
+  "@logMailApp": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogAddressRequired": "Вкажіть адресу OPDS-каталогу.",
+  "ipLookupFailed": "Не вдалося визначити IP-адресу: {error}",
+  "@ipLookupFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "portInUse": "Порт {port} вже зайнятий. Виберіть інший порт у налаштуваннях.",
+  "@portInUse": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "mailNotConfigured": "Пошту Kindle не налаштовано: вкажіть адресу Kindle, SMTP-сервер, адресу відправника та хоча б один формат.",
+  "mailBody": "Книга «{title}» надіслана із застосунку klos.\n\nФайл: {file}",
+  "@mailBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "file": {
+        "type": "String"
+      }
+    }
+  },
+  "testMailNotConfigured": "Спочатку заповніть адресу Kindle, SMTP-сервер, адресу відправника і виберіть хоча б один формат.",
+  "testMailSubject": "klos: перевірка пошти",
+  "testMailFileContent": "Це тестовий лист від klos.\nЯкщо ви бачите його на Kindle, пошта налаштована правильно.\n",
+  "testMailBody": "Тестовий лист від klos.\n\nЯкщо Amazon прийняв лист, книга приходитиме на ваш Kindle.",
+  "mailTooLarge": "Файл більший за 25 МБ — Amazon не приймає такі листи. Спробуйте інший формат або завантажте книгу напряму.",
+  "smtpAuthRejected": "SMTP-сервер відхилив логін або пароль. Для Gmail потрібен пароль застосунку, а не звичайний пароль.",
+  "smtpNoSecure": "SMTP-сервер не підтримує захищене з'єднання. Перевірте порт і перемикач SSL.",
+  "smtpMessageRejected": "Пошта відхилила лист: перевірте адреси Kindle і відправника.",
+  "smtpNoGreeting": "SMTP-сервер не відповів привітанням. Перевірте адресу й порт.",
+  "smtpCommunication": "Помилка обміну з SMTP-сервером: {error}",
+  "@smtpCommunication": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mailSendFailed": "Не вдалося надіслати лист: {error}",
+  "@mailSendFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "smtpTimeout": "SMTP-сервер не відповідає (таймаут).",
+  "smtpTls": "Помилка TLS-з'єднання з SMTP-сервером. Спробуйте інший порт (465 з SSL або 587 без SSL).",
+  "smtpConnectFailed": "Не вдалося підключитися до SMTP-сервера: {error}",
+  "@smtpConnectFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsParseFailed": "Не вдалося розібрати OPDS-каталог: {error}",
+  "@opdsParseFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsResponseTooLarge": "Відповідь OPDS-сервера завелика.",
+  "opdsReadFailed": "Помилка читання відповіді: {error}",
+  "@opdsReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "onlyHttpAddresses": "Підтримуються лише адреси http:// та https://.",
+  "opdsTimeout": "OPDS-сервер не відповідає (таймаут).",
+  "tlsError": "Помилка TLS-з'єднання: {error}",
+  "@tlsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsConnectFailed": "Не вдалося підключитися до OPDS-сервера: {error}",
+  "@opdsConnectFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionError": "Помилка з'єднання: {error}",
+  "@connectionError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "opdsAccessDenied": "OPDS-сервер відхилив доступ (HTTP {status}). Перевірте логін і пароль у налаштуваннях.",
+  "@opdsAccessDenied": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "opdsHttpStatus": "OPDS-сервер повернув HTTP {status}.",
+  "@opdsHttpStatus": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "untitled": "Без назви",
+  "notAtomFeed": "отримано не Atom/OPDS-каталог",
+  "invalidJson": "отримано некоректний JSON",
+  "notOpds2Feed": "отримано не OPDS 2.0-каталог",
+  "opdsHtmlInsteadOfFile": "OPDS-сервер повернув HTML-сторінку замість файлу. Можливо, потрібен логін або доступ до цієї книги закритий.",
+  "epubNotZip": "Файл не є коректним EPUB (ZIP): {error}",
+  "@epubNotZip": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "epubEmpty": "Файл EPUB порожній.",
+  "epubNoOpf": "У файлі EPUB немає OPF-маніфесту.",
+  "epubOpfFailed": "Не вдалося прочитати OPF-маніфест: {error}",
+  "@epubOpfFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "epubNoManifest": "У книзі немає маніфесту.",
+  "epubNoText": "У книзі немає тексту, який можна конвертувати.",
+  "epubTextNotFound": "Не вдалося знайти текст книги. Можливо, EPUB має незвичайну структуру або захищений DRM.",
+  "epubDrm": "Книга захищена DRM і не може бути конвертована. Завантажте інший формат або надішліть книгу на Kindle поштою.",
+  "epubChapter": "Розділ {index}",
+  "@epubChapter": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "coverLabel": "Обкладинка",
+  "contentsLabel": "Зміст",
+  "conversionFailed": "Не вдалося конвертувати книгу: {error}",
+  "@conversionFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "convertUnsupportedFormat": "Цей формат не можна конвертувати на телефоні. Підтримуються EPUB і FB2.",
+  "mobiTextTooLarge": "Текст книги занадто великий для конвертації.",
+  "bookFallbackTitle": "Книга",
+  "mailStageQueued": "У черзі…",
+  "mailStageDownloading": "Завантаження книги з OPDS…",
+  "mailStageSending": "Надсилання листа на Kindle…",
+  "mailStageDone": "Лист надіслано",
+  "mailStageFailed": "Не вдалося надіслати",
+  "shareBody": "Книга «{title}» із klos",
+  "@shareBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "shareOpenFailed": "Не вдалося відкрити поштову програму.",
+  "shareAndroidOnly": "Відправка листом доступна лише в Android-збірці klos.",
+  "refresh": "Оновити",
+  "searchResults": "Результати пошуку:",
+  "searchCatalog": "Пошук у каталозі",
+  "searchHint": "Назва книги або автор",
+  "reset": "Скинути",
+  "catalogEmpty": "Каталог порожній.",
+  "previousPage": "&lt; Назад",
+  "nextPage": "Далі &gt;",
+  "source": "Джерело:",
+  "mailDownloadingHint": "Книга завантажується з OPDS-каталогу. Це може зайняти кілька хвилин.",
+  "mailSendingHint": "Лист передається SMTP-серверу. Не закривайте застосунок klos.",
+  "mailAccepted": "Лист прийнято поштовим сервером.",
+  "mailAcceptedTo": "Лист на {email} прийнято поштовим сервером.",
+  "@mailAcceptedTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "mailAmazonHint": "Amazon обробляє книгу окремо: вона з'явиться в бібліотеці Kindle протягом кількох хвилин. Якщо адреса відправника не додана до списку дозволених у налаштуваннях Amazon, лист буде відхилено.",
+  "unknownError": "Невідома помилка.",
+  "retry": "Спробувати ще раз",
+  "refreshStatus": "Оновити статус зараз",
+  "autoRefresh": "Сторінка оновлюється автоматично кожні 4 секунди.",
+  "home": "На головну",
+  "errorTitle": "Помилка",
+  "fileReady": "Файл готовий",
+  "sharePrepared": "На телефоні відкрито поштову програму. Вкладення вже додано — перевірте лист і надішліть його.",
+  "sharePreparedTo": "На телефоні відкрито поштову програму. Вкладення вже додано, адреса <b>{email}</b> заповнена — перевірте лист і надішліть його.",
+  "@sharePreparedTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "shareHint": "Якщо поштова програма не з'явилася, відкрийте klos на екрані телефону та повторіть. Файл тимчасово лежить у кеші застосунку.",
+  "notConfiguredBody": "OPDS-каталог не додано, і папку з книгами не вибрано.",
+  "notConfiguredHelp": "Відкрийте застосунок klos на телефоні, додайте адресу OPDS-сервера або виберіть папку з книгами та запустіть локальний сервер.",
+  "notFoundTitle": "Не знайдено",
+  "notFoundHeading": "Сторінку не знайдено",
+  "notFoundHint": "Можливо, посилання застаріле.",
+  "downloadAction": "{format} (завантажити)",
+  "@downloadAction": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "emailAction": "{format} (на пошту)",
+  "@emailAction": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadInProgress": "Завантаження…",
+  "actionWaitHint": "Зачекайте, це може тривати до хвилини. Не натискайте кнопку ще раз.",
+  "mailInProgress": "Надсилання…",
+  "getBook": "Отримати:",
+  "searchButton": "Знайти",
+  "entriesCount": "{count, plural, one{{count} запис} few{{count} записи} many{{count} записів} other{{count} записів}}",
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sendByEmailTitle": "На пошту",
+  "webHelpHeading": "Як завантажити книгу",
+  "webHelpStep1": "Підключіть Kindle і телефон до однієї Wi-Fi мережі.",
+  "webHelpStep2": "На Kindle відкрийте <b>Experimental Browser</b> (Експериментальний браузер).",
+  "webHelpStep3": "Введіть адресу цього сервера:<br><b>{address}</b>",
+  "@webHelpStep3": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+  "webHelpStep4": "Виберіть книгу та формат. Позначка <b>(завантажити)</b> збереже файл на Kindle, <b>(на пошту)</b> надішле його на адресу Kindle — автоматично через SMTP, якщо він налаштований, або через поштову програму на телефоні, а <b>(конвертувати)</b> створить MOBI на телефоні.",
+  "webHelpStep5": "Файл з'явиться у бібліотеці Kindle або в теці <b>Documents</b>.",
+  "webHelpFormats": "Якщо формат не відкривається, спробуйте MOBI або AZW3. ZIP-архів klos розпаковує автоматично: для Kindle бере MOBI, AZW3, AZW, PDF або TXT, для пошти — EPUB, PDF, TXT, RTF, DOC/DOCX чи HTML, а для конвертації — EPUB. Якщо всередині лише FB2 чи CBZ, klos так і скаже.",
+  "webHelpSearch": "Якщо в каталозі є поле <b>Знайти</b>, пошук працює прямо з Kindle: введіть автора або назву книги.",
+  "webHelpLimits": "Конвертація спрощує складну верстку й не працює з DRM. Відправка через поштову програму працює, лише коли застосунок klos відкрито на телефоні: файл тимчасово зберігається в кеші застосунку.",
+  "webHelpPrivacy": "Книги не зберігаються на телефоні постійно: сервер лише передає їх з OPDS-каталогу на Kindle. Телефон має бути поруч і підключений до тієї ж мережі. Поки сервер увімкнений, у шторці Android видно повідомлення.",
+  "serverErrorLog": "Помилка сервера: {error}",
+  "@serverErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "methodNotSupported": "Метод {method} не підтримується.",
+  "@methodNotSupported": {
+    "placeholders": {
+      "method": {
+        "type": "String"
+      }
+    }
+  },
+  "requestErrorLog": "Помилка запиту {uri}: {error}",
+  "@requestErrorLog": {
+    "placeholders": {
+      "uri": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "internalServerError": "Внутрішня помилка сервера: {error}",
+  "@internalServerError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badImageAddress": "У посиланні немає коректної адреси зображення.",
+  "notAnImage": "OPDS-сервер повернув не зображення.",
+  "coverLog": "Обкладинка: {error}",
+  "@coverLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "imageFetchFailed": "Не вдалося отримати зображення: {error}",
+  "@imageFetchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badCatalogAddress": "У посиланні немає коректної адреси каталогу.",
+  "catalogLog": "Каталог: {title} ({count}) — {ip}",
+  "@catalogLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogErrorLog": "Помилка каталогу {url}: {error}",
+  "@catalogErrorLog": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badSearchTemplate": "У посиланні немає коректного шаблону пошуку.",
+  "searchUrlFailed": "Не вдалося побудувати адресу пошуку.",
+  "openSearchLog": "OpenSearch: {error}",
+  "@openSearchLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badFileAddress": "У посиланні немає коректної адреси файлу.",
+  "downloadTooLarge": "Файл завеликий для завантаження (понад 120 МБ).",
+  "downloadLog": "Завантаження: {name} — {ip}",
+  "@downloadLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadFromZipLog": "Завантаження: {name} — {ip} (з ZIP)",
+  "@downloadFromZipLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "fileTransferFailed": "Не вдалося передати файл: {error}",
+  "@fileTransferFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "fileTransferInterrupted": "Передавання файлу перервано: {error}",
+  "@fileTransferInterrupted": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "badBookAddress": "У посиланні немає коректної адреси книги.",
+  "opdsEmptyFile": "OPDS-сервер повернув порожній файл.",
+  "conversionLog": "Конвертація: «{title}» — {ip}",
+  "@conversionLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "conversionDoneLog": "Конвертація: готово «{file}» — {ip}",
+  "@conversionDoneLog": {
+    "placeholders": {
+      "file": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "sendUnavailable": "Відправка листом недоступна в цій збірці застосунку.",
+  "appNotOpenMailApp": "Застосунок klos зараз не відкритий на телефоні. Відкрийте його на екрані та повторіть — тоді відкриється поштова програма з готовим листом.",
+  "tooLargeToEmail": "Файл завеликий для відправки листом (понад 100 МБ).",
+  "mailAppLog": "Пошта (поштова програма): «{name}» — {ip}",
+  "@mailAppLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "mailAppFromZipLog": "Пошта (поштова програма): «{name}» — {ip} (з ZIP)",
+  "@mailAppFromZipLog": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "mailPrepareErrorLog": "Помилка відправки листом: {error}",
+  "@mailPrepareErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "prepareFileFailed": "Не вдалося підготувати файл: {error}",
+  "@prepareFileFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "kindleAddressMissing": "Адресу Kindle не вказано. Відкрийте застосунок klos, зайдіть у «Налаштування» → «Пошта Kindle» і вкажіть адресу Kindle. SMTP можна не заповнювати: тоді відкриється поштова програма.",
+  "amazonRejectsFormats": "Amazon приймає листом EPUB, PDF, TXT, DOC/DOCX та зображення; FB2, CBZ і ZIP він не конвертує. Адреса відправника має бути додана до «Approved Personal Document E-mail List» у налаштуваннях Amazon, інакше лист відхилять.",
+  "mailQueuedLog": "Пошта: у черзі «{title}» — {ip}",
+  "@mailQueuedLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "mailNotConfiguredShort": "Пошту Kindle не налаштовано.",
+  "mailSkippedLog": "Пошта: пропущено — пошту Kindle не налаштовано",
+  "mailDownloadLog": "Пошта: завантаження «{title}»",
+  "@mailDownloadLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mailSentLog": "Пошта: «{title}» надіслано на {email}",
+  "@mailSentLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "mailErrorLog": "Пошта: помилка — {error}",
+  "@mailErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeLink": "Головна",
+  "helpAddressPlaceholder": "http://IP-адреса-телефону:8080/",
+  "fileFallback": "Файл",
+  "shareChooserTitle": "Надіслати книгу на Kindle",
+  "shareMissingArgs": "Не вказано файл або адресу Kindle.",
+  "shareMissingFile": "Файл книги не знайдено.",
+  "notificationChannelName": "Локальний сервер",
+  "notificationChannelDescription": "Повідомлення про роботу OPDS-сервера для Kindle",
+  "notificationRunning": "Сервер працює",
+  "notificationRunningPort": "Сервер працює · порт {port}",
+  "@notificationRunningPort": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "zipTooManyEntries": "ZIP-архів містить забагато файлів.",
+  "epubTooManyEntries": "EPUB містить забагато файлів для безпечної конвертації.",
+  "epubEntryTooLarge": "Файл усередині EPUB завеликий для конвертації.",
+  "epubExpandsTooMuch": "EPUB розпаковується в забагато даних для конвертації.",
+  "fileSizeBytes": "{size} Б",
+  "@fileSizeBytes": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "fileSizeKb": "{size} КБ",
+  "@fileSizeKb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "fileSizeMb": "{size} МБ",
+  "@fileSizeMb": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "localFiles": "Локальні файли",
+  "localFolder": "Локальна папка",
+  "localFolderDefaultName": "Downloads",
+  "localFolderUp": "↑ Вгору",
+  "localFolderRoot": "Корінь папки",
+  "localFolderEmpty": "У цій папці немає книг. Підпапки теж показуються тут.",
+  "localFolderLabel": "Папка",
+  "localFormatNeedsDelivery": "Kindle не відкриває {format} напряму, і Amazon не приймає його листом. Спробуйте EPUB, MOBI або PDF.",
+  "@localFormatNeedsDelivery": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderNotConnected": "Папку ще не підключено. Відкрийте klos → «Налаштування» → «Локальні файли» і виберіть папку з книгами. На Android 11+ саму Downloads вибрати не можна — виберіть підпапку, наприклад Download/Books.",
+  "localFolderNotConnectedShort": "Доступ ще не надано",
+  "localFolderConnectHint": "Телефон відкриває лише ту папку, яку ви підтвердите: Android не дозволяє застосунку читати все сховище.",
+  "localFolderConnectedShort": "Доступ надано",
+  "localFolderBadLink": "Це посилання не належить вибраній папці.",
+  "localFolderAccessLost": "Доступ до папки втрачено. Відкрийте klos → «Налаштування» → «Локальні файли» і виберіть папку знову.",
+  "localFolderErrorLog": "Локальна папка: помилка — {error}",
+  "@localFolderErrorLog": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localCatalogLog": "Локальна папка «{title}»: {count} записів — {ip}",
+  "@localCatalogLog": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderAndroidOnly": "Вибір папки доступний лише на Android.",
+  "localFolderPickerFailed": "Не вдалося відкрити вибір папки: {error}",
+  "@localFolderPickerFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderReadFailed": "Не вдалося прочитати папку: {error}",
+  "@localFolderReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFileReadFailed": "Не вдалося прочитати файл: {error}",
+  "@localFileReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFileTooLarge": "Файл більший за {mb} МБ, його не можна використати так.",
+  "@localFileTooLarge": {
+    "placeholders": {
+      "mb": {
+        "type": "int"
+      }
+    }
+  },
+  "localFolderHint": "Kindle бачить книги з цієї папки разом із підпапками. Android один раз попросить підтвердити папку. Якщо книги лежать у Downloads, виберіть підпапку — сам корінь Downloads на Android 11+ недоступний. Вибір застосовується одразу.",
+  "localFolderDefaultNote": "Android 11+ не дає підтвердити сам корінь Downloads. У виборі папки відкрийте Downloads, натисніть ⋮ → «Нова папка», створіть, наприклад, Books, перенесіть туди книги й виберіть цю підпапку. На Android 10 і старіших можна вибрати сам Downloads.",
+  "chooseFolder": "Вибрати папку",
+  "resetFolder": "Скинути",
+  "library": "Бібліотека",
+  "browseCatalog": "Переглянути каталог",
+  "browseCatalogHint": "Читайте каталог у застосунку та додавайте книги в обране",
+  "openSeries": "Відкрити серію",
+  "downloadLinkMissing": "У цієї книги немає файлу для завантаження.",
+  "downloadToFolder": "Завантажити в папку",
+  "downloadToFolderNote": "Книга збережеться у вибрану папку, і Kindle побачить її в «Локальних файлах». EPUB і FB2 klos конвертує в MOBI, ZIP розпакує сам.",
+  "downloadFolderMissing": "Щоб зберегти книгу для Kindle, виберіть локальну папку на головному екрані.",
+  "savedToFolder": "Збережено: {name}",
+  "@savedToFolder": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "saveToFolderFailed": "Не вдалося зберегти книгу: {error}",
+  "@saveToFolderFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderNotChosen": "Спочатку виберіть локальну папку на головному екрані.",
+  "localFolderWriteFailed": "Не вдалося записати файл у папку: {error}",
+  "@localFolderWriteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "localFolderWriteDenied": "Немає дозволу на запис у папку. Виберіть папку ще раз на головному екрані.",
+  "favorites": "Обране",
+  "favoritesEmpty": "Тут ще немає збережених книг. Відкрийте каталог і натисніть закладку біля потрібної книги.",
+  "favoritesEmptyShort": "Ще нічого не збережено",
+  "favoritesCount": "{count, plural, one{{count} книга} few{{count} книги} many{{count} книг} other{{count} книг}}",
+  "@favoritesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "favoriteAdd": "Додати в обране",
+  "favoriteRemove": "Прибрати з обраного",
+  "catalogBack": "← Назад",
+  "catalogForward": "Далі →",
+  "catalogLoadFailed": "Не вдалося завантажити каталог",
+  "catalogLoadFailedHint": "Перевірте адресу каталогу та з'єднання з інтернетом.",
+  "favoritesEmptyOnKindleShort": "Обране порожнє.",
+  "webHelpActions": "«на пошту» — на адресу Kindle; «завантажити» для EPUB/FB2 створює MOBI на телефоні — експериментально, складна верстка спрощується. Кнопка «на пошту» з'являється лише для форматів, які приймає Amazon (EPUB, PDF, TXT, DOC/DOCX, RTF, HTML). Якщо SMTP налаштовано, лист надсилається автоматично; інакше відкриється поштовий застосунок на телефоні з готовим вкладенням. Решта форматів завантажується як звичайний файл; ZIP-архів klos розпаковує сам і бере з нього файл, придатний для Kindle або Amazon.",
+  "webHelpFavorites": "Обране — це книги, які ви зберегли в застосунку klos. Відкрийте «Бібліотека» → «Переглянути каталог», натисніть закладку біля потрібної книги — і вона з'явиться у «Обраному», зокрема в браузері Kindle, з тими самими кнопками «завантажити» й «на пошту».",
+  "favoritesLog": "Обране: {count} книг(и) — {ip}",
+  "@favoritesLog": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  }
+}
