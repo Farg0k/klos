@@ -28,9 +28,6 @@ Kindle (Experimental Browser)  ──HTTP──▶  phone (klos)  ──HTTP─�
   **Settings → Language** (Auto / English / Ukrainian);
 - auto / light / dark theme — **Settings → Theme**; Auto follows the phone's
   light or dark mode;
-- the brand blue `#0D8BD0` in buttons, switches, the app icon, the splash
-  screen, the favicon and the app bar in both themes;
-- the same 8 px corner radius for buttons, cards, fields and dialogs;
 - plain HTML without JavaScript — compatible with old Kindle browsers,
   high contrast, no grey text;
 - nested catalogs and OPDS pagination (`next`/`previous`) with large buttons
