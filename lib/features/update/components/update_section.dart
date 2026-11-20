@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../generated/l10n.dart';
 import '../../../platform/app_update.dart';
 import '../bloc/update_bloc.dart';
+import '../release_notes.dart';
 import 'release_notes_view.dart';
 import 'update_message.dart';
 
@@ -80,7 +81,7 @@ class UpdateSection extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            if (update.notes.isNotEmpty) ...[
+            if (parseReleaseNotes(update.notes).isNotEmpty) ...[
               const SizedBox(height: 6),
               Text(
                 s.updateNotes,

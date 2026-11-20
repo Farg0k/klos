@@ -18,12 +18,9 @@ class ReleaseNotesView extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final notes = parseReleaseNotes(markdown);
 
-    if (notes.isEmpty) {
-      return Text(
-        markdown.trim(),
-        style: textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
-      );
-    }
+    // Nothing readable left — a release whose notes were only GitHub's compare
+    // link. An empty block is better than the raw Markdown.
+    if (notes.isEmpty) return const SizedBox.shrink();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
