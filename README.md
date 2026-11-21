@@ -20,6 +20,13 @@ Kindle (Experimental Browser)  ──HTTP──▶  phone (klos)  ──HTTP─�
                                                     └──▶  local folder on the phone
 ```
 
+## Screenshots
+
+| | | |
+| --- | --- | --- |
+| ![Home screen](docs/screenshots/01-home.png)<br>Home | ![Library](docs/screenshots/02-library.png)<br>Catalog navigation | ![Books](docs/screenshots/03-catalog.png)<br>Book list |
+| ![Book details](docs/screenshots/04-book.png)<br>Book details | ![Settings](docs/screenshots/05-settings.png)<br>Settings | ![About](docs/screenshots/06-about.png)<br>About |
+
 ## Features
 
 - one OPDS catalog address (Atom/XML or JSON) with optional HTTP Basic login;
